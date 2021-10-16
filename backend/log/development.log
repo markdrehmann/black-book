@@ -33,3 +33,175 @@ FOREIGN KEY ("contact_id")
   [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (6.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "Bob"], ["password_digest", "test"], ["created_at", "2021-10-16 04:53:56.590252"], ["updated_at", "2021-10-16 04:53:56.590252"]]
+  [1m[36mTRANSACTION (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (4.0ms)[0m  [1m[33mUPDATE "users" SET "password_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["password_digest", "$2a$12$ufmicrZyhhb8ao4KGklOjuYiyPx3Ulq88fzt4iv.E83jqWHkH6Egq"], ["updated_at", "2021-10-16 04:54:37.003064"], ["id", 1]]
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (1.6ms)[0m  [1m[33mUPDATE "users" SET "password_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["password_digest", "$2a$12$7WYi9GkYle2g86ccjWfxM.slZxzBc7a5qLiTPavyy27GDkDo0lRBK"], ["updated_at", "2021-10-16 04:54:57.811374"], ["id", 1]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mContact Load (2.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? /* loading for inspect */ LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mContact Create (4.2ms)[0m  [1m[32mINSERT INTO "contacts" ("first_name", "phone", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["first_name", "Jim"], ["phone", "555-444-1234"], ["user_id", 1], ["created_at", "2021-10-16 04:56:27.916135"], ["updated_at", "2021-10-16 04:56:27.916135"]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? /* loading for inspect */ LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? ORDER BY "contacts"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ? /* loading for inspect */ LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mContact Create (3.5ms)[0m  [1m[32mINSERT INTO "contacts" ("first_name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Ted"], ["user_id", 1], ["created_at", "2021-10-16 04:58:57.434155"], ["updated_at", "2021-10-16 04:58:57.434155"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for ::1 at 2021-10-15 22:13:50 -0700
+  [1m[35m (4.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/goodalena12/.rvm/gems/ruby-2.6.1/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/goodalena12/.rvm/gems/ruby-2.6.1/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 13.9ms | Allocations: 480)
+Completed 200 OK in 74ms (Views: 28.2ms | ActiveRecord: 0.0ms | Allocations: 4151)
+
+
+Started GET "/users" for ::1 at 2021-10-15 22:21:50 -0700
+  
+SyntaxError (/Users/goodalena12/Flatiron/code/black-book/backend/app/controllers/users_controller.rb:5: syntax error, unexpected '\n', expecting =>
+/Users/goodalena12/Flatiron/code/black-book/backend/app/controllers/users_controller.rb:6: syntax error, unexpected ')', expecting end
+... => [:created_at, :updated_at])
+...                              ^
+/Users/goodalena12/Flatiron/code/black-book/backend/app/controllers/users_controller.rb:14: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/users_controller.rb:5: syntax error, unexpected '\n', expecting =>
+app/controllers/users_controller.rb:6: syntax error, unexpected ')', expecting end
+app/controllers/users_controller.rb:14: syntax error, unexpected end-of-input, expecting end
+app/controllers/users_controller.rb:5: syntax error, unexpected '\n', expecting =>
+app/controllers/users_controller.rb:6: syntax error, unexpected ')', expecting end
+app/controllers/users_controller.rb:14: syntax error, unexpected end-of-input, expecting end
+Started GET "/users" for ::1 at 2021-10-15 22:22:27 -0700
+  
+SyntaxError (/Users/goodalena12/Flatiron/code/black-book/backend/app/controllers/users_controller.rb:5: syntax error, unexpected '}', expecting =>
+    :contacts }#=> {:only => [:id, :first_na...
+              ^
+/Users/goodalena12/Flatiron/code/black-book/backend/app/controllers/users_controller.rb:6: syntax error, unexpected ')', expecting end
+... => [:created_at, :updated_at])
+...                              ^
+/Users/goodalena12/Flatiron/code/black-book/backend/app/controllers/users_controller.rb:14: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/users_controller.rb:5: syntax error, unexpected '}', expecting =>
+app/controllers/users_controller.rb:6: syntax error, unexpected ')', expecting end
+app/controllers/users_controller.rb:14: syntax error, unexpected end-of-input, expecting end
+app/controllers/users_controller.rb:5: syntax error, unexpected '}', expecting =>
+app/controllers/users_controller.rb:6: syntax error, unexpected ')', expecting end
+app/controllers/users_controller.rb:14: syntax error, unexpected end-of-input, expecting end
+Started GET "/favicon.ico" for ::1 at 2021-10-15 22:22:28 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/users" for ::1 at 2021-10-15 22:22:58 -0700
+Processing by UsersController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 44ms (Views: 0.3ms | ActiveRecord: 1.3ms | Allocations: 6822)
+
+
+  [1m[35m (6.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "Joe"], ["password_digest", "$2a$12$mg6tOpRn6v8gRALfK2/N2enOOXB7N3hfggf9Tpw67cJ2w7.961nt2"], ["created_at", "2021-10-16 05:23:28.013690"], ["updated_at", "2021-10-16 05:23:28.013690"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "Tim"], ["password_digest", "$2a$12$tHUp0fsZ4W19jQ2P2UgCf.ODty6DQ2Lm1k75e0vdqVZx0kbhex6fG"], ["created_at", "2021-10-16 05:23:28.315579"], ["updated_at", "2021-10-16 05:23:28.315579"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mContact Create (0.6ms)[0m  [1m[32mINSERT INTO "contacts" ("first_name", "last_name", "phone", "email", "address", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Joe"], ["last_name", "Bigs"], ["phone", "555-012-3456"], ["email", "joe@bigs.com"], ["address", "New York, NY"], ["user_id", 2], ["created_at", "2021-10-16 05:23:28.357761"], ["updated_at", "2021-10-16 05:23:28.357761"]]
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mContact Create (0.5ms)[0m  [1m[32mINSERT INTO "contacts" ("first_name", "last_name", "phone", "email", "address", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Brian"], ["last_name", "Smalls"], ["phone", "555-012-9876"], ["email", "brian@smalls.com"], ["address", "New York, NY"], ["user_id", 2], ["created_at", "2021-10-16 05:23:28.368062"], ["updated_at", "2021-10-16 05:23:28.368062"]]
+  [1m[36mTRANSACTION (6.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mNote Create (0.5ms)[0m  [1m[32mINSERT INTO "notes" ("text", "contact_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["text", "This is a sample note"], ["contact_id", 3], ["created_at", "2021-10-16 05:23:28.395385"], ["updated_at", "2021-10-16 05:23:28.395385"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/users" for ::1 at 2021-10-15 22:23:44 -0700
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 47ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 8471)
+
+
+Started GET "/users" for ::1 at 2021-10-15 22:24:43 -0700
+  
+SyntaxError (/Users/goodalena12/Flatiron/code/black-book/backend/app/controllers/users_controller.rb:4: syntax error, unexpected ( arg, expecting end
+...   render json: users.to_json (:include => {
+...                              ^
+/Users/goodalena12/Flatiron/code/black-book/backend/app/controllers/users_controller.rb:4: syntax error, unexpected =>, expecting ')'
+...son: users.to_json (:include => {
+...                             ^~
+/Users/goodalena12/Flatiron/code/black-book/backend/app/controllers/users_controller.rb:5: syntax error, unexpected '}', expecting ']'
+...name, :phone, :email, :address},
+...                              ^
+/Users/goodalena12/Flatiron/code/black-book/backend/app/controllers/users_controller.rb:6: syntax error, unexpected ')', expecting end
+... => [:created_at, :updated_at])
+...                              ^
+/Users/goodalena12/Flatiron/code/black-book/backend/app/controllers/users_controller.rb:14: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/users_controller.rb:4: syntax error, unexpected ( arg, expecting end
+app/controllers/users_controller.rb:4: syntax error, unexpected =>, expecting ')'
+app/controllers/users_controller.rb:5: syntax error, unexpected '}', expecting ']'
+app/controllers/users_controller.rb:6: syntax error, unexpected ')', expecting end
+app/controllers/users_controller.rb:14: syntax error, unexpected end-of-input, expecting end
+app/controllers/users_controller.rb:4: syntax error, unexpected ( arg, expecting end
+app/controllers/users_controller.rb:4: syntax error, unexpected =>, expecting ')'
+app/controllers/users_controller.rb:5: syntax error, unexpected '}', expecting ']'
+app/controllers/users_controller.rb:6: syntax error, unexpected ')', expecting end
+app/controllers/users_controller.rb:14: syntax error, unexpected end-of-input, expecting end
+Started GET "/users" for ::1 at 2021-10-15 22:24:56 -0700
+  
+SyntaxError (/Users/goodalena12/Flatiron/code/black-book/backend/app/controllers/users_controller.rb:5: syntax error, unexpected '}', expecting ']'
+...name, :phone, :email, :address},
+...                              ^
+/Users/goodalena12/Flatiron/code/black-book/backend/app/controllers/users_controller.rb:6: syntax error, unexpected ')', expecting end
+... => [:created_at, :updated_at])
+...                              ^
+/Users/goodalena12/Flatiron/code/black-book/backend/app/controllers/users_controller.rb:14: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/users_controller.rb:5: syntax error, unexpected '}', expecting ']'
+app/controllers/users_controller.rb:6: syntax error, unexpected ')', expecting end
+app/controllers/users_controller.rb:14: syntax error, unexpected end-of-input, expecting end
+app/controllers/users_controller.rb:5: syntax error, unexpected '}', expecting ']'
+app/controllers/users_controller.rb:6: syntax error, unexpected ')', expecting end
+app/controllers/users_controller.rb:14: syntax error, unexpected end-of-input, expecting end
+Started GET "/users" for ::1 at 2021-10-15 22:25:32 -0700
+Processing by UsersController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.6ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 88ms (Views: 0.2ms | ActiveRecord: 3.1ms | Allocations: 16850)
+
+
+Started GET "/users" for ::1 at 2021-10-15 22:26:44 -0700
+Processing by UsersController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 39ms (Views: 0.2ms | ActiveRecord: 3.0ms | Allocations: 13809)
+
+
