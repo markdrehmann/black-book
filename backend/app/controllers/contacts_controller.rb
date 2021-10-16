@@ -23,3 +23,24 @@ class ContactsController < ApplicationController
     render json: contact
   end
 end
+
+# This is JS example for making new contact - from Git 'er Done
+# function newTask(event) {
+#   event.preventDefault();
+#   let input = event.target.firstElementChild;
+#   let description = input.value;
+#   if (description) {
+#     let id = input.getAttribute("data-list-id");
+#     event.target.reset();
+#     fetch("http://localhost:3000/tasks", {
+#     method: "POST",
+#     headers: { "Content-Type" : "application/json" },
+#     body: JSON.stringify({"description" : `${description}`, "list_id" : `${id}`})
+#     })
+#     .then(response => response.json())
+#     .then(task => console.log(task))
+#     .then(() => getLists());
+#   } else {
+#     alert("Can't be blank!");
+#   }
+# }
