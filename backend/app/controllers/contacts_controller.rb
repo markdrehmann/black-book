@@ -5,4 +5,21 @@ class ContactsController < ApplicationController
     # user_contacts = contacts.select {|c| c.user_id == params[:user_id] }
     render json: contacts, except: [:created_at, :updated_at]
   end
+
+  def create
+    contact = Contact.create(
+      first_name: params[:first_name],
+      last_name: params[:last_name],
+      phone: params[:phone],
+      email: params[:email],
+      address: params[:address],
+      user_id: params[:user_id], # or potentially user.id?
+    )
+  end
+
+  def destroy
+    contact = Contact.find_by(id: params[:id])
+    contact.destroy
+    render json: contact
+  end
 end
