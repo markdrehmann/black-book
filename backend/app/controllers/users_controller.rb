@@ -11,4 +11,9 @@ class UsersController < ApplicationController
     render json: user, except: [:created_at, :updated_at]
   end
 
+  def destroy
+    user = User.find_by(id: paramd[:id])
+    user.destroy
+    render json: user
+  end
 end
