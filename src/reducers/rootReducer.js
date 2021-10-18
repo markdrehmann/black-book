@@ -1,11 +1,25 @@
 import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
+  users: usersReducer,
   contacts: contactsReducer,
   notes: notesReducer
 });
 
 export default rootReducer;
+
+function usersReducer(state = [], action) {
+  let idx;
+  switch(action.type) {
+    case 'ADD_USER':
+      return [...state, action.user];
+    case 'DELETE_USER':
+      idx = state.findIndex(user => user.id === action.id);
+      return [...state.slice(0, idx), ...state.slice(idx + 1)];
+    default:
+      return state;
+  }
+}
 
 function contactsReducer(state = [], action) {
   let idx;
