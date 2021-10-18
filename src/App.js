@@ -8,14 +8,20 @@ import {
 
 function App() {
   return (
-    <div className="App">
-      {/* <header className="App-header"> ((THIS JUST HAS SOME CSS))  */}
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          This is the Black Book, sucka.
-        </p>
-      {/* </header> */}
-    </div>
+    <Router>
+      <div className='App'>
+        
+
+      </div>
+    </Router>
+    // <div className="App">
+    //   {/* <header className="App-header"> ((THIS JUST HAS SOME CSS))  */}
+    //     <img src={logo} className="App-logo" alt="logo" />
+    //     <p>
+    //       This is the Black Book, sucka.
+    //     </p>
+    //   {/* </header> */}
+    // </div>
   );
 }
 
