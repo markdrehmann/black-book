@@ -9,11 +9,13 @@ import Home from './components/Home';
 import NewUser from './components/users/NewUser';
 import Login from './components/users/Login';
 import NavBar from './components/NavBar';
+import Title from './components/Title';
 
 function App() {
   return (
     <Router>
       <div className='App'>
+        <Title />
         <NavBar />
         <Route exact path="/" component={Home} />
         <Route exact path="/signup" component={NewUser} />

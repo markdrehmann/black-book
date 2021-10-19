@@ -2,8 +2,7 @@ import React from 'react';
 
 const Home = () => {
   return(
-    <h1>The Black Book</h1>
-
+    <p>For all of your contact needs.</p>
   )
 }
 
