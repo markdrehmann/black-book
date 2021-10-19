@@ -27,6 +27,17 @@
   color: white;
 }
 
+.NavBar {
+  background-color: #3d3d3d;
+  /* text color? */
+  min-height: 30px;
+  /* border-bottom: 2px solid black; */
+  padding-bottom: 10px;
+  padding-top: 22px;
+  margin-bottom: 12px;
+  /* margin-top: 12px; */
+}
+
 .App-footer{
   margin-top: auto;
   }
