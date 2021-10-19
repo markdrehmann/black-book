@@ -11,6 +11,7 @@ import NewUser from './components/users/NewUser';
 import Login from './components/users/Login';
 import NavBar from './components/NavBar';
 import Title from './components/Title';
+import User from './components/users/User';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/signup" component={NewUser} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/users/:id" component={User} />
         <footer className="App-footer">
           <img src={logo} className="App-logo" alt="logo" />
         </footer>
