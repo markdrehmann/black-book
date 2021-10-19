@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 class NewUser extends Component {
   state = {
     username: '',
-    password: ''
+    password: '',
+    submitted: false
   }
 
   handleChange = event => {
@@ -14,6 +15,7 @@ class NewUser extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    this.setState({ ...this.state, submitted: true }); // this doesn't work right yet
     console.log("Submitted???");
     console.log(this.state)
     this.setState({username: '', password: ''})
