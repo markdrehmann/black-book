@@ -18,7 +18,9 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/signup" component={NewUser} />
         <Route exact path="/login" component={Login} />
-        <img src={logo} className="App-logo" alt="logo" />
+        <footer className="App-footer">
+          <img src={logo} className="App-logo" alt="logo" />
+        </footer>
       </div>
     </Router>
     // <div className="App">
