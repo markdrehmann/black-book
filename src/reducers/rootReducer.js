@@ -25,7 +25,7 @@ function usersReducer(state = {users: [], loggedIn: false, currentUserId: null},
       return {
         ...state,
         loggedIn: true,
-        currentUserId: users[idx]
+        currentUserId: state.users[idx]
       }
     case 'LOG_OUT':
       return {
@@ -49,6 +49,7 @@ function contactsReducer(state = [], action) {
       idx = state.findIndex(contact => contact.id === action.id)
       return [...state.slice(0, idx), ...state.slice(idx + 1)];
     case 'UPDATE_CONTACT':
+      idx = state.findIndex(contact => contact.id === action.id)
       return state;
     default:
       return state;
