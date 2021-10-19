@@ -1,19 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
-import React, { Component } from 'react';
+import React from 'react';
 import {
   BrowserRouter as Router,
-  Route
+  Route, NavLink
 } from 'react-router-dom';
 import Home from './components/Home';
 import NewUser from './components/users/NewUser';
+import Login from './components/users/Login';
 
 function App() {
   return (
     <Router>
       <div className='App'>
+        
         <Route exact path="/" component={Home} />
         <Route exact path="/signup" component={NewUser} />
+        <Route exact path="/login" component={Login} />
         <img src={logo} className="App-logo" alt="logo" />
       </div>
     </Router>

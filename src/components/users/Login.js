@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class NewUser extends Component {
+class Login extends Component {
   state = {
     username: '',
     password: ''
@@ -22,17 +22,17 @@ class NewUser extends Component {
   render() {
     return(
       <div>
-        <h2>Create your account!</h2>
+        <h2>Log In!</h2>
         <form onSubmit={this.handleSubmit}>
           <label>Username: </label>
           <input type='text' name='username' value={this.state.username} onChange={this.handleChange}/><br/><br/>
           <label>Password: </label>
           <input type='password' name='password' value={this.state.password} onChange={this.handleChange}/><br/><br/>
-          <input type='submit' value='No turning back...'/>
+          <input type='submit' value='Enter at your own risk...'/>
         </form>
       </div>
     )
   }
 }
 
-export default NewUser
+export default Login
