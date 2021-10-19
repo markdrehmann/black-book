@@ -5,13 +5,14 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
+import Home from './components/home';
 
 function App() {
   return (
     <Router>
       <div className='App'>
-        
-
+        <Route exact path="/" component={Home} />
+        <img src={logo} className="App-logo" alt="logo" />
       </div>
     </Router>
     // <div className="App">

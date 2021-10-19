@@ -789,3 +789,17 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 69ms (Views: 34.7ms | ActiveRecord: 0.0ms | Allocations: 2451)
 
 
+Started GET "/users/4" for ::1 at 2021-10-18 21:06:30 -0700
+  [1m[35m (4.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (30.0ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (3.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 328ms (Views: 212.7ms | ActiveRecord: 39.6ms | Allocations: 23253)
+
+
