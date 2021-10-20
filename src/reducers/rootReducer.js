@@ -13,17 +13,30 @@ function rootReducer(state = {
   loading: false
 }, action) {
   switch(action.type) {
-    case 'GET_USER':
+    case 'LOADING_USERS':
+      return {
+        ...state,
+        loading: true
+      }
+    case 'LOGIN':
       return { ...state,
-        users: [
-          ...state.users, action
-        ]
+        loggedIn: true,
+        currentUserId: action.user.id,
+        loading: false
+      }
+    case 'LOGOUT':
+      return { ...state,
+        loggedIn: false,
+        currentUserId: null,
+        loading: false
       }
     case 'ADD_USERS':
       console.log(action)
       return {
         ...state,
-        users: action.users
+        users: action.users,
+        loading: false,
+        // loggedIn: true
       }
     default:
       return state;

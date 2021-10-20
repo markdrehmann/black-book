@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchUsers } from './actions/userActions';
+import { fetchUsers, login, logout } from './actions/userActions';
 import {
   BrowserRouter as Router,
   Route
@@ -25,7 +25,7 @@ class App extends React.Component {
       <Router>
         <div className='App'>
           <Title />
-          <NavBar />
+          <NavBar loggedIn={this.props.loggedIn}/>
           <Route exact path="/" component={Home} />
           <Route exact path="/signup" component={NewUser} />
           <Route exact path="/login" component={Login} />
@@ -51,7 +51,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchUsers: () => dispatch(fetchUsers())
+    fetchUsers: () => dispatch(fetchUsers()),
+    login: (user) => dispatch(login(user)),
+    logout: () => dispatch(logout())
   };
 }
 
