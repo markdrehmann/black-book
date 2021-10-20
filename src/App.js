@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchUser } from './actions/userActions';
+import { fetchUsers } from './actions/userActions';
 import {
   BrowserRouter as Router,
   Route
@@ -16,8 +16,8 @@ import User from './components/users/User';
 
 class App extends React.Component {
   componentDidMount() {
+    this.props.fetchUsers();
     console.log(this.props);
-    this.props.fetchUser();
   }
 
   render() {
@@ -42,20 +42,16 @@ class App extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    users: {
-      users: state.users.users,
-      loggedIn: state.users.loggedIn,
-      currentUserId: state.users.currentUserId,
-      loading: state.users.loading
-    },
-    contacts: state.contacts,
-    notes: state.notes
+    users: state.users,
+    loggedIn: state.loggedIn,
+    currentUserId: state.currentUserId,
+    loading: state.loading
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchUser: () => dispatch(fetchUser())
+    fetchUsers: () => dispatch(fetchUsers())
   };
 }
 

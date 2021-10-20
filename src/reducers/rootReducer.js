@@ -1,10 +1,39 @@
-import { combineReducers } from 'redux';
+// import { combineReducers } from 'redux';
 
-const rootReducer = combineReducers({
-  users: usersReducer,
-  contacts: contactsReducer,
-  notes: notesReducer
-});
+// const rootReducer = combineReducers({
+//   users: usersReducer,
+//   contacts: contactsReducer,
+//   notes: notesReducer
+// });
+
+function rootReducer(state = {
+  users: [],
+  loggedIn: false,
+  currentUserId: null,
+  loading: false
+}, action) {
+  switch(action.type) {
+    case 'GET_USER':
+      return { ...state,
+        users: [
+          ...state.users, action
+        ]
+      }
+    case 'ADD_USERS':
+      console.log(action)
+      return {
+        ...state,
+        users: action.users
+      }
+    default:
+      return state;
+  }
+}
+
+// return {
+//   ...state,
+//   cats: action.cats,
+//   loading: false
 
 export default rootReducer;
 
@@ -16,6 +45,15 @@ function usersReducer(state = {users: [], loggedIn: false, currentUserId: null, 
         ...state,
         users: [...state.users],
         loading: true
+      }
+    case 'GET_USER':
+      return {
+        ...state, users: [action.users]
+        // ...state,
+        // users: [...state.users, action.users.users],
+        // loggedIn: true,
+        // currentUserId: action.id,
+        // loading: false
       }
     case 'ADD_USER':
       return {
@@ -79,3 +117,21 @@ function notesReducer(state = [], action) {
       return state;
   }
 }
+
+// THIS IS MAYBE STATE, BUT MAYBE MORE COMPLICATED THAN IT NEEDS TO BE
+// state = {
+//   usersState: {
+//     users: [],
+//     loggedIn: false,
+//     currentUserId: null,
+//     loading: false
+//   },
+//   contactsState: {
+//     contacts: [],
+//     loading: false
+//   },
+//   notesState: {
+//     notes: [],
+//     loading: false
+//   }
+// }

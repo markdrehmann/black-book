@@ -1,8 +1,9 @@
-export const fetchUser = () => {
-  return (dispatch) => {dispatch({type: 'LOADING_USER'});
-  fetch("https://localhost:3000/users/4")
+export const fetchUsers = () => {
+  return (dispatch) => {dispatch({type: 'LOADING_USERS'});
+  fetch("http://localhost:3000/users")
     .then(res => res.json())
-    .then(data => {dispatch({type: 'ADD_USER', user: data})})
+    // .then(data => console.log(data))
+    .then(data => {dispatch({type: 'ADD_USERS', users: data})})
   }
 }
 

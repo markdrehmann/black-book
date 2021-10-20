@@ -836,3 +836,809 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 200ms (Views: 128.4ms | ActiveRecord: 12.5ms | Allocations: 23307)
 
 
+Started GET "/users/4" for ::1 at 2021-10-19 21:21:01 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (2.1ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (2.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 49ms (Views: 25.4ms | ActiveRecord: 9.4ms | Allocations: 2570)
+
+
+Started GET "/users/4" for ::1 at 2021-10-19 21:21:55 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 13ms (Views: 9.0ms | ActiveRecord: 0.8ms | Allocations: 2569)
+
+
+Started GET "/users/4" for ::1 at 2021-10-19 21:31:40 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (8.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (3.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 235ms (Views: 34.3ms | ActiveRecord: 36.1ms | Allocations: 3069)
+
+
+Started GET "/users/4" for ::1 at 2021-10-19 21:33:31 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (3.5ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (0.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 95ms (Views: 50.3ms | ActiveRecord: 5.5ms | Allocations: 2549)
+
+
+Started GET "/users/4" for ::1 at 2021-10-19 21:45:39 -0700
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (2.5ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (3.9ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 180ms (Views: 113.5ms | ActiveRecord: 13.0ms | Allocations: 23354)
+
+
+Started GET "/users/4" for ::1 at 2021-10-19 21:48:00 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (3.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (2.9ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 50ms (Views: 27.9ms | ActiveRecord: 9.4ms | Allocations: 2572)
+
+
+Started GET "/users/4" for ::1 at 2021-10-19 21:55:54 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (1.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (4.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 69ms (Views: 25.2ms | ActiveRecord: 12.3ms | Allocations: 3073)
+
+
+Started GET "/users/4" for ::1 at 2021-10-19 21:55:58 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (2.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 20ms (Views: 13.2ms | ActiveRecord: 3.3ms | Allocations: 2572)
+
+
+Started GET "/users/4" for ::1 at 2021-10-19 22:02:30 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mUser Load (10.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (0.7ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (7.6ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 71ms (Views: 22.0ms | ActiveRecord: 19.8ms | Allocations: 3073)
+
+
+Started GET "/users/4" for ::1 at 2021-10-19 22:02:34 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 19ms (Views: 9.3ms | ActiveRecord: 1.2ms | Allocations: 2552)
+
+
+Started GET "/users/4" for ::1 at 2021-10-19 22:10:10 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (6.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (2.6ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 87ms (Views: 39.7ms | ActiveRecord: 17.8ms | Allocations: 3054)
+
+
+Started GET "/users/4" for ::1 at 2021-10-19 22:22:16 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (1.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (5.8ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 153ms (Views: 63.3ms | ActiveRecord: 21.1ms | Allocations: 3053)
+
+
+Started GET "/users/4" for ::1 at 2021-10-19 22:29:06 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (1.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (6.6ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 123ms (Views: 66.4ms | ActiveRecord: 12.0ms | Allocations: 3053)
+
+
+Started GET "/users/4" for ::1 at 2021-10-19 22:29:10 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 30ms (Views: 19.8ms | ActiveRecord: 3.2ms | Allocations: 2552)
+
+
+Started GET "/users/4" for ::1 at 2021-10-19 22:38:34 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mUser Load (6.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (3.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (6.6ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 219ms (Views: 89.7ms | ActiveRecord: 18.5ms | Allocations: 3053)
+
+
+Started GET "/users/4" for ::1 at 2021-10-19 22:43:49 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (4.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (1.5ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 100ms (Views: 41.0ms | ActiveRecord: 7.8ms | Allocations: 3054)
+
+
+Started GET "/users/4" for ::1 at 2021-10-19 22:50:18 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (1.0ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (2.8ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 49ms (Views: 22.7ms | ActiveRecord: 5.9ms | Allocations: 3053)
+
+
+Started GET "/users/4" for ::1 at 2021-10-19 22:51:13 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (8.0ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 73ms (Views: 43.7ms | ActiveRecord: 9.6ms | Allocations: 2553)
+
+
+Started GET "/users/4" for ::1 at 2021-10-19 22:51:17 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (0.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 21ms (Views: 17.8ms | ActiveRecord: 0.9ms | Allocations: 2552)
+
+
+Started GET "/users/4" for ::1 at 2021-10-19 22:53:56 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 16ms (Views: 10.8ms | ActiveRecord: 0.8ms | Allocations: 2552)
+
+
+Started GET "/users/4" for ::1 at 2021-10-19 23:29:30 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (4.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (8.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 91ms (Views: 48.9ms | ActiveRecord: 16.3ms | Allocations: 3054)
+
+
+Started GET "/users/4" for ::1 at 2021-10-19 23:30:14 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (0.5ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (0.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 43ms (Views: 23.2ms | ActiveRecord: 6.6ms | Allocations: 2552)
+
+
+Started GET "/users/4" for ::1 at 2021-10-19 23:31:33 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 50ms (Views: 23.0ms | ActiveRecord: 2.0ms | Allocations: 2552)
+
+
+Started GET "/users/4" for ::1 at 2021-10-19 23:31:43 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 15ms (Views: 10.5ms | ActiveRecord: 1.0ms | Allocations: 2552)
+
+
+Started GET "/users/4" for ::1 at 2021-10-19 23:32:59 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 30ms (Views: 11.3ms | ActiveRecord: 4.8ms | Allocations: 2552)
+
+
+Started GET "/users/4" for ::1 at 2021-10-19 23:34:55 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 49ms (Views: 28.0ms | ActiveRecord: 2.1ms | Allocations: 2552)
+
+
+Started GET "/users/4" for ::1 at 2021-10-19 23:35:15 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 76ms (Views: 43.1ms | ActiveRecord: 1.2ms | Allocations: 2552)
+
+
+Started GET "/users/4" for ::1 at 2021-10-19 23:37:24 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (0.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 53ms (Views: 27.2ms | ActiveRecord: 2.4ms | Allocations: 2553)
+
+
+Started GET "/users/4" for ::1 at 2021-10-19 23:38:01 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 56ms (Views: 45.8ms | ActiveRecord: 0.8ms | Allocations: 2552)
+
+
+Started GET "/users/4" for ::1 at 2021-10-19 23:38:30 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (0.8ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 19ms (Views: 15.8ms | ActiveRecord: 1.3ms | Allocations: 2552)
+
+
+Started GET "/users/4" for ::1 at 2021-10-19 23:38:35 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 16ms (Views: 10.8ms | ActiveRecord: 0.7ms | Allocations: 2552)
+
+
+Started GET "/users/4" for ::1 at 2021-10-19 23:41:15 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (1.0ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 91ms (Views: 59.0ms | ActiveRecord: 3.6ms | Allocations: 2552)
+
+
+Started GET "/users/4" for ::1 at 2021-10-19 23:41:59 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (0.9ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (0.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 107ms (Views: 83.9ms | ActiveRecord: 2.3ms | Allocations: 2552)
+
+
+Started GET "/user/4" for ::1 at 2021-10-19 23:47:03 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/user/4"):
+  
+Started GET "/user/4" for ::1 at 2021-10-19 23:47:04 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/user/4"):
+  
+Started GET "/user/4" for ::1 at 2021-10-19 23:56:38 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/user/4"):
+  
+Started GET "/user/4" for ::1 at 2021-10-19 23:56:42 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/user/4"):
+  
+Started GET "/users/4" for ::1 at 2021-10-19 23:58:20 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[35m (15.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (1.8ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (2.7ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 347ms (Views: 141.4ms | ActiveRecord: 38.3ms | Allocations: 3053)
+
+
+Started GET "/users/4" for ::1 at 2021-10-19 23:58:22 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 60ms (Views: 47.6ms | ActiveRecord: 1.0ms | Allocations: 2552)
+
+
+Started GET "/users/4" for ::1 at 2021-10-20 00:00:08 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (0.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 302ms (Views: 244.0ms | ActiveRecord: 5.3ms | Allocations: 2552)
+
+
+Started GET "/users/4" for ::1 at 2021-10-20 00:06:56 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (1.8ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (1.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 93ms (Views: 40.0ms | ActiveRecord: 7.0ms | Allocations: 3053)
+
+
+Started GET "/users/4" for ::1 at 2021-10-20 00:06:59 -0700
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  [1m[36mNote Load (0.6ms)[0m  [1m[34mSELECT "notes".* FROM "notes" INNER JOIN "contacts" ON "notes"."contact_id" = "contacts"."id" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+Completed 200 OK in 100ms (Views: 53.5ms | ActiveRecord: 3.5ms | Allocations: 2556)
+
+
+Started GET "/users" for ::1 at 2021-10-20 00:11:42 -0700
+Processing by UsersController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (3.0ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.1ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 127ms (Views: 91.4ms | ActiveRecord: 13.6ms | Allocations: 16033)
+
+
+Started GET "/users" for ::1 at 2021-10-20 00:11:46 -0700
+Processing by UsersController#index as */*
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 24ms (Views: 21.3ms | ActiveRecord: 2.8ms | Allocations: 5222)
+
+
+Started GET "/users" for ::1 at 2021-10-20 00:12:10 -0700
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 37ms (Views: 35.6ms | ActiveRecord: 1.3ms | Allocations: 5222)
+
+
+Started GET "/users" for ::1 at 2021-10-20 00:12:16 -0700
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.1ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 23ms (Views: 15.9ms | ActiveRecord: 1.0ms | Allocations: 5222)
+
+
+Started GET "/users" for ::1 at 2021-10-20 00:12:23 -0700
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.6ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (1.0ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 27ms (Views: 24.1ms | ActiveRecord: 2.7ms | Allocations: 5221)
+
+
+Started GET "/users" for ::1 at 2021-10-20 00:13:19 -0700
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.5ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.5ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 37ms (Views: 34.8ms | ActiveRecord: 1.9ms | Allocations: 5221)
+
+
+Started GET "/users" for ::1 at 2021-10-20 00:13:47 -0700
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 24ms (Views: 21.9ms | ActiveRecord: 1.6ms | Allocations: 5221)
+
+
+Started GET "/users" for ::1 at 2021-10-20 00:14:32 -0700
+Processing by UsersController#index as */*
+  [1m[36mUser Load (13.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (4.0ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 127ms (Views: 104.1ms | ActiveRecord: 18.9ms | Allocations: 5221)
+
+
+Started GET "/users" for ::1 at 2021-10-20 00:15:44 -0700
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 32ms (Views: 29.4ms | ActiveRecord: 1.5ms | Allocations: 5221)
+
+
+Started GET "/users" for ::1 at 2021-10-20 00:16:48 -0700
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.8ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 42ms (Views: 38.3ms | ActiveRecord: 2.4ms | Allocations: 5221)
+
+
+Started GET "/users" for ::1 at 2021-10-20 00:18:33 -0700
+Processing by UsersController#index as */*
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.5ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.8ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 118ms (Views: 108.2ms | ActiveRecord: 4.8ms | Allocations: 5221)
+
+
+Started GET "/users" for ::1 at 2021-10-20 00:18:36 -0700
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 60ms (Views: 51.8ms | ActiveRecord: 1.8ms | Allocations: 5221)
+
+
+Started GET "/users" for ::1 at 2021-10-20 00:19:46 -0700
+Processing by UsersController#index as */*
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.6ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.9ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 445ms (Views: 433.7ms | ActiveRecord: 4.0ms | Allocations: 5222)
+
+
+Started GET "/users" for ::1 at 2021-10-20 00:20:15 -0700
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.8ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 1.7ms | Allocations: 5221)
+
+
+Started GET "/users" for ::1 at 2021-10-20 00:22:29 -0700
+Processing by UsersController#index as */*
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (1.5ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 83ms (Views: 69.0ms | ActiveRecord: 3.6ms | Allocations: 5221)
+
+
+Started GET "/users" for ::1 at 2021-10-20 00:23:23 -0700
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 1.6ms | Allocations: 5221)
+
+
+Started GET "/users" for ::1 at 2021-10-20 00:23:52 -0700
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 1.4ms | Allocations: 5221)
+
+
+Started GET "/users" for ::1 at 2021-10-20 00:24:03 -0700
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 1.5ms | Allocations: 5221)
+
+
