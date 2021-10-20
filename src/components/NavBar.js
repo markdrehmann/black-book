@@ -13,16 +13,16 @@ const NavBar = ({loggedIn}) => {
       </NavLink>
       <NavLink 
         style={{ marginRight: '10px' }} 
+        to="/users/:id/contacts"
+      >
+        Contacts
+      </NavLink>
+      <NavLink 
+        style={{ marginRight: '10px' }} 
         to="/logout"
       >
         Log Out
       </NavLink>
-      {/* <NavLink 
-        style={{ marginRight: '10px' }} 
-        to="/login"
-      >
-        Log In
-      </NavLink> */}
     </div>
     )
   } else {
