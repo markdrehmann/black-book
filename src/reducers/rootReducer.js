@@ -36,7 +36,7 @@ function rootReducer(state = {
         ...state,
         users: action.users,
         loading: false,
-        // loggedIn: true
+        // loggedIn: true //this is just for testing
       }
     default:
       return state;

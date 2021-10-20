@@ -13,6 +13,7 @@ import Login from './components/users/Login';
 import NavBar from './components/NavBar';
 import Title from './components/Title';
 import User from './components/users/User';
+import Logout from './components/users/Logout';
 
 class App extends React.Component {
   componentDidMount() {
@@ -25,11 +26,12 @@ class App extends React.Component {
       <Router>
         <div className='App'>
           <Title />
-          <NavBar loggedIn={this.props.loggedIn}/>
+          <NavBar loggedIn={this.props.loggedIn} />
           <Route exact path="/" component={Home} />
           <Route exact path="/signup" component={NewUser} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/users/:id" component={User} />
+          {/* <Route exact path="/logout" component={Logout} logout={this.props.logout} /> */}
           <footer className="App-footer">
             <img src={logo} className="App-logo" alt="logo" />
           </footer>
