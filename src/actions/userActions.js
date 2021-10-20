@@ -1,5 +1,5 @@
 export const fetchUsers = () => {
-  return (dispatch) => {dispatch({type: 'LOADING_USERS'});
+  return (dispatch) => {dispatch({type: 'LOADING'});
   fetch("http://localhost:3000/users")
     .then(res => res.json())
     .then(data => {dispatch({type: 'ADD_USERS', users: data})})

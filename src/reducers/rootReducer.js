@@ -13,7 +13,7 @@ function rootReducer(state = {
   loading: false
 }, action) {
   switch(action.type) {
-    case 'LOADING_USERS':
+    case 'LOADING':
       return {
         ...state,
         loading: true
@@ -36,17 +36,11 @@ function rootReducer(state = {
         ...state,
         users: action.users,
         loading: false,
-        loggedIn: true //this is just for testing
       }
     default:
       return state;
   }
 }
-
-// return {
-//   ...state,
-//   cats: action.cats,
-//   loading: false
 
 export default rootReducer;
 
@@ -130,21 +124,3 @@ function notesReducer(state = [], action) {
       return state;
   }
 }
-
-// THIS IS MAYBE STATE, BUT MAYBE MORE COMPLICATED THAN IT NEEDS TO BE
-// state = {
-//   usersState: {
-//     users: [],
-//     loggedIn: false,
-//     currentUserId: null,
-//     loading: false
-//   },
-//   contactsState: {
-//     contacts: [],
-//     loading: false
-//   },
-//   notesState: {
-//     notes: [],
-//     loading: false
-//   }
-// }
