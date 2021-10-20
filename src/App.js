@@ -31,7 +31,7 @@ class App extends React.Component {
           <Route exact path="/signup" component={NewUser} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/users/:id" component={User} />
-          {/* <Route exact path="/logout" component={Logout} logout={this.props.logout} /> */}
+          <Route exact path="/logout" render={(props) => (<Logout {...props} logout={this.props.logout} />)}/>
           <footer className="App-footer">
             <img src={logo} className="App-logo" alt="logo" />
           </footer>
