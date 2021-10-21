@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def login
     # byebug
     user = User.find_by(username: params[:username])
-    if user&.authenticate(params[:password])
+    if user && user.authenticate(params[:password])
       render json: user, :include => [
       :contacts => {:only => [:id, :first_name, :last_name, :phone, :email, :address, :user_id], :include => [:notes => {:only => [:id, :text, :contact_id]}]
       }]

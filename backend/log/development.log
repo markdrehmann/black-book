@@ -3680,3 +3680,5 @@ Processing by UsersController#login as */*
 Completed 200 OK in 172ms (Views: 8.1ms | ActiveRecord: 20.7ms | Allocations: 1113106)
 
 
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
