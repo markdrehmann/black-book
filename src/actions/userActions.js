@@ -17,7 +17,7 @@ export const createUser = (user) => {
         "Accept": "application/json",
         "Content-Type": "application/json"
       },
-      mode: "cors",
+      // mode: "cors",
       body: JSON.stringify(user)
     })
       .then(res => res.json())
@@ -25,8 +25,7 @@ export const createUser = (user) => {
   }
 }
 
-// add this login function everywhere
-export const login = (user) => {
+export const loginUser = (user) => {
   return (dispatch) => {
     dispatch({type: 'LOADING'})
     console.log(user)
@@ -36,7 +35,6 @@ export const login = (user) => {
         "Accept": "application/json",
         "Content-Type": "application/json"
       },
-      mode: "cors",
       body: JSON.stringify(user)
     })
       .then(res => res.json())

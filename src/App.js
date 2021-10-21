@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchUsers, login, logout, createUser } from './actions/userActions';
+import { fetchUsers, login, logout, createUser, loginUser } from './actions/userActions';
 import {
   BrowserRouter as Router,
   Route
@@ -29,7 +29,7 @@ class App extends React.Component {
           <NavBar loggedIn={this.props.loggedIn} />
           <Route exact path="/" component={Home} />
           <Route exact path="/signup" render={(props) => (<NewUser {...props} createUser={this.props.createUser} />)} />
-          <Route exact path="/login" component={Login} />
+          <Route exact path="/login" render={(props) => (<Login {...props} loginUser={this.props.loginUser} />)} />
           <Route exact path="/users/:id" render={(props) => (<User {...props} />)}/>
           <Route exact path="/logout" render={(props) => (<Logout {...props} logout={this.props.logout} />)}/>
           <footer className="App-footer">
@@ -56,7 +56,8 @@ const mapDispatchToProps = dispatch => {
     fetchUsers: () => dispatch(fetchUsers()),
     login: (user) => dispatch(login(user)),
     logout: () => dispatch(logout()),
-    createUser: (user) => dispatch(createUser(user))
+    createUser: (user) => dispatch(createUser(user)),
+    loginUser: (user) => dispatch(loginUser(user)),
   };
 }
 
