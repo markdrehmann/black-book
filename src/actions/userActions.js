@@ -13,7 +13,7 @@ export const createUser = (user) => {
     console.log(user)
     fetch("http://localhost:3001/users", {
       method: "POST",
-      header: {
+      headers: {
         "Accept": "application/json",
         "Content-Type": "application/json"
       },
@@ -28,10 +28,10 @@ export const createUser = (user) => {
 export const loginUser = (user) => {
   return (dispatch) => {
     dispatch({type: 'LOADING'})
-    console.log(user)
+    console.log("Inside loginUser, right before fetch", user)
     fetch("http://localhost:3001/users/login", {
       method: "POST",
-      header: {
+      headers: {
         "Accept": "application/json",
         "Content-Type": "application/json"
       },

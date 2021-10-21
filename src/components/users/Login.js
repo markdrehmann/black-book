@@ -14,7 +14,7 @@ class Login extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log(this.state);
+    console.log("handleSubmit in Login.js", this.state);
     this.props.loginUser(this.state);
     // something with redirecting to user show page
     this.setState({username: '', password: ''})
