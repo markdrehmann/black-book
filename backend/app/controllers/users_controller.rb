@@ -6,9 +6,9 @@ class UsersController < ApplicationController
   }, :except => [:created_at, :updated_at] 
   end
 
-  # def login
-  #   # validate username and password, Yes - return user, No - return error
-  # end
+  def login
+    byebug
+  end
 
   def show
     user = User.find_by(id: params[:id])
