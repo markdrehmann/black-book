@@ -7,6 +7,20 @@ class User extends React.Component {
   //   console.log(this.props)
   // }
 
+  // handleLoading = () => {
+  //   console.log(this.props.loading)
+  //   if(this.props.loading) {
+  //     return <div>Loading...</div>
+  //   } else {
+  //     return(
+  //       <>
+  //         <h1>Welcome {this.props.user.username}!</h1>
+  //         <ContactsContainer />
+  //       </>
+  //     )
+  //   }
+  // }
+
   render() {
     // console.log(this.props)
     return(
@@ -20,7 +34,8 @@ class User extends React.Component {
 
 const mapStateToProps = state => {
   return({
-    user: state.user
+    user: state.user,
+    loading: state.loading
   })
 }
 
