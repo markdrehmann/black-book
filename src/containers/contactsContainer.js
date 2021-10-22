@@ -7,7 +7,7 @@ class ContactsContainer extends React.Component {
     let contacts = this.props.contacts
     return(
       <>
-        {contacts ? contacts.map(contact => <Contact key={contact.id} {...contact} />) : <p>No Contacts Yet!</p>}
+        {contacts ? contacts.map(contact => <Contact key={contact.id} contact={contact} />) : <p>No Contacts Yet!</p>}
         {/* pass contact through contacts.map, also pass edit and delete contacts... */}
       </>
     )
