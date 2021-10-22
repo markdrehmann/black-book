@@ -21,7 +21,7 @@ export const createUser = (user) => {
       body: JSON.stringify(user)
     })
       .then(res => res.json())
-      .then(data => console.log(data))
+      .then(user => {dispatch({type: 'LOGIN', user})})
   }
 }
 
@@ -41,8 +41,6 @@ export const loginUser = (user) => {
       .then(user => {dispatch({type: 'LOGIN', user})})
   }
 }
-
-// {dispatch({type: 'ADD_USERS', users: data})}
 
 export const logout = () => {
   return (dispatch) => {dispatch({type: 'LOGOUT'})}
