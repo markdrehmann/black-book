@@ -8,8 +8,6 @@
 
 function rootReducer(state = {
   user: {},
-  // loggedIn: false,
-  // currentUserId: null,
   loading: false
 }, action) {
   switch(action.type) {
@@ -19,27 +17,15 @@ function rootReducer(state = {
         loading: true
       }
     case 'LOGIN':
-      // console.log("LOGIN CASE", action)
       return {
         user: action.response,
-        // loggedIn: true,
-        // currentUserId: action.user.id,
         loading: false
       }
     case 'LOGOUT':
       return {
         user: {},
-        // loggedIn: false,
-        // currentUserId: null,
         loading: false
       }
-    // case 'ADD_USERS':
-    //   console.log("in action add_users", action)
-    //   return {
-    //     ...state,
-    //     users: action.users,
-    //     loading: false
-    //   }
     default:
       return state;
   }
@@ -47,7 +33,7 @@ function rootReducer(state = {
 
 export default rootReducer;
 
-// probably not using anything below here
+// probably not using anything below here -- except maybe some contact and note actions?
 
 // function usersReducer(state = {users: [], loggedIn: false, currentUserId: null, loading: false}, action) {
 //   let idx;
