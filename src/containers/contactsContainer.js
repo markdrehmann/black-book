@@ -1,17 +1,35 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import Contact from '../components/Contact';
 
 class ContactsContainer extends React.Component {
   renderContacts = () => {
+    let contacts = this.props.contacts
     return(
       <>
-        <p>this will loop through all contacts and use the Contact component to rock 'em</p>
+        {contacts ? contacts.map(contact => <Contact key={contact.id} {...contact} />) : <p>No Contacts Yet!</p>}
+        {/* pass contact through contacts.map, also pass edit and delete contacts... */}
       </>
     )
   }
 
   render() {
-    return(<p>Contacts Container placeholder...</p>)
+    return(
+      <>
+        <h3>Your Contacts</h3>
+        {/* <NewContact />  */}
+        {this.renderContacts()}
+      </>
+    )
   }
 }
 
-export default ContactsContainer
+const mapStateToProps = state => {
+  return {
+    contacts: state.user.contacts
+  }
+}
+
+// probably a mapDispatchToProps for createContact and editContact and deleteContact
+
+export default connect(mapStateToProps)(ContactsContainer)
