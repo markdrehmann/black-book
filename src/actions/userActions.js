@@ -25,7 +25,7 @@ export const createUser = (user, history) => {
           alert(response.errors)
         } else {
           dispatch({type: 'LOGIN', response})
-          history.push('/')
+          history.push('/user')
         }
       })
       .catch(console.log)
@@ -50,8 +50,9 @@ export const loginUser = (user, history) => {
           alert(response.errors)
         } else {
           dispatch({type: 'LOGIN', response})
-          history.push('/')
+          history.push('/user')
         }
+        // console.log(response)
       })
       .catch(console.log)
   }

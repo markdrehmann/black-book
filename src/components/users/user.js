@@ -1,15 +1,27 @@
 import React from "react";
+import { connect } from 'react-redux';
+import ContactsContainer from "../../containers/ContactsContainer";
 
 class User extends React.Component {
-  componentDidMount() {
-    console.log(this.props)
-  }
+  // componentDidMount() {
+  //   console.log(this.props)
+  // }
 
   render() {
+    // console.log(this.props)
     return(
-      <h1>some sort of user page {this.props.user.id}</h1>
+      <>
+        <h1>Welcome {this.props.user.username}!</h1>
+        <ContactsContainer />
+      </>
     )
   }
 }
 
-export default User
+const mapStateToProps = state => {
+  return({
+    user: state.user
+  })
+}
+
+export default connect(mapStateToProps)(User)

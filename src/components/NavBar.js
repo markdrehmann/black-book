@@ -11,9 +11,9 @@ const NavBar = props => {
       <div className='NavBar'>
       <NavLink 
         style={{ marginRight: '10px' }} 
-        to="/"
+        to="/user"
       >
-        Home
+        My Profile
       </NavLink>
       <NavLink 
         style={{ marginRight: '10px' }} 
@@ -57,9 +57,7 @@ const NavBar = props => {
 
 const mapStateToProps = state => {
   return {
-    // user: state.user,
-    // loggedIn: Object.keys(state.user).length === 0 ? false : true,
-    loggedIn: !state.user
+    loggedIn: !!state.user.id
   }
 }
 

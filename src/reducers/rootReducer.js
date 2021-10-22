@@ -21,7 +21,7 @@ function rootReducer(state = {
     case 'LOGIN':
       // console.log("LOGIN CASE", action)
       return {
-        user: action.user,
+        user: action.response,
         // loggedIn: true,
         // currentUserId: action.user.id,
         loading: false

@@ -1,9 +1,5 @@
 import logo from './logo.svg';
 import './App.css';
-// import React from 'react';
-
-// import { connect } from 'react-redux';
-// import { logout, createUser, loginUser } from './actions/userActions';
 
 import { BrowserRouter as Router, Route, Switch, useHistory } from 'react-router-dom';
 
@@ -15,10 +11,6 @@ import Title from './components/Title';
 import User from './components/users/User';
 import Contacts from './containers/ContactsContainer';
 import Contact from './components/Contact';
-// import Logout from './components/users/Logout';
-
-
-// import Logout from './components/users/Logout';
 
 function App () {
   const history = useHistory();
@@ -33,7 +25,6 @@ function App () {
             <Route exact path='/user' component={User} history={history} />
             <Route exact path='/contacts' component={Contacts} history={history} />
             <Route exact path='/contacts/:id' component={Contact} history={history} />
-            {/* <Route exact path='/logout' component={Logout} history={history} /> */}
             <Route exact path='/' component={Home} history={history} />
           </Switch>
 
@@ -42,7 +33,6 @@ function App () {
           </footer>
         </Router>
       </div>
-      //     <img src={logo} className="App-logo" alt="logo" />
     );
 }
 
