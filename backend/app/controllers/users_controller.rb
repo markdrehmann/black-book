@@ -7,7 +7,6 @@ class UsersController < ApplicationController
   end
 
   def login
-    # byebug
     user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
       render json: user, :include => [
@@ -26,7 +25,6 @@ class UsersController < ApplicationController
   end 
 
   def create
-    # byebug
     user = User.new(username: params[:username], password: params[:password])
     if user.save
       render json: user, except: [:created_at, :updated_at]
@@ -41,5 +39,3 @@ class UsersController < ApplicationController
     render json: user
   end
 end
-
-# render json: users, include: {id:, first_name:, last_name:, phone:, email:, address:, user_id:, notes: {include: :text}}
