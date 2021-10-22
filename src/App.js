@@ -1,4 +1,3 @@
-// import logo from './logo.svg';
 import './App.css';
 
 import { BrowserRouter as Router, Route, Switch, useHistory } from 'react-router-dom';
@@ -27,13 +26,15 @@ function App () {
             <Route exact path='/contacts/:id' component={Contact} history={history} />
             <Route exact path='/' component={Home} history={history} />
           </Switch>
-
-          <footer className="App-footer">
-            {/* <img src={logo} className="App-logo" alt="logo" /> */}
-          </footer>
         </Router>
       </div>
     );
 }
 
 export default App
+
+// import logo from './logo.svg';
+
+// <footer className="App-footer">
+//   <img src={logo} className="App-logo" alt="logo" />
+// </footer>

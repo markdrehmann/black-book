@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import logo from './logo.svg';
 import logo from '../logo.svg';
 
 class Title extends React.Component {
@@ -10,7 +9,7 @@ class Title extends React.Component {
         <div>
           <h1>The Black Book</h1>
           <img src={logo} className="App-logo" alt="logo" />
-          {/* <h2>Loading...</h2> */}
+          <h2>Loading...</h2>
         </div>
       )
     } else {
