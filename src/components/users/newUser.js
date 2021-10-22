@@ -16,7 +16,7 @@ class NewUser extends Component {
   handleSubmit = event => {
     event.preventDefault();
     this.props.createUser(this.state);
-    // this.props.history.push(`/user/${user.id}`)
+    // this.props.history.push(`/user/${this.props.currentUserId}`)
     this.setState({username: '', password: ''})
   }
 

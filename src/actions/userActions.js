@@ -1,16 +1,16 @@
-export const fetchUsers = () => {
-  return (dispatch) => {
-    dispatch({type: 'LOADING'})
-    fetch("http://localhost:3001/users")
-      .then(res => res.json())
-      .then(data => {dispatch({type: 'ADD_USERS', users: data})})
-  }
-}
+// export const fetchUsers = () => {
+//   return (dispatch) => {
+//     dispatch({type: 'LOADING'})
+//     fetch("http://localhost:3001/users")
+//       .then(res => res.json())
+//       .then(data => {dispatch({type: 'ADD_USERS', users: data})})
+//   }
+// }
 
 export const createUser = (user) => {
   return (dispatch) => {
     dispatch({type: 'LOADING'})
-    console.log(user)
+    // console.log('INSIDE CREATEUSER, PRE-FETCH', user)
     fetch("http://localhost:3001/users", {
       method: "POST",
       headers: {
@@ -28,7 +28,7 @@ export const createUser = (user) => {
 export const loginUser = (user) => {
   return (dispatch) => {
     dispatch({type: 'LOADING'})
-    console.log("Inside loginUser, right before fetch", user)
+    // console.log("Inside loginUser, right before fetch", user)
     fetch("http://localhost:3001/users/login", {
       method: "POST",
       headers: {
@@ -38,7 +38,7 @@ export const loginUser = (user) => {
       body: JSON.stringify(user)
     })
       .then(res => res.json())
-      .then(user => {dispatch({type: 'LOGIN', user})})
+      .then(user => {dispatch({type: 'LOGIN', user})}, console.log('end of fetch', user))
   }
 }
 

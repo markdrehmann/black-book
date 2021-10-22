@@ -13,7 +13,7 @@ const NavBar = ({loggedIn}) => {
       </NavLink>
       <NavLink 
         style={{ marginRight: '10px' }} 
-        to="/users/:id/contacts"
+        to="/users/${this.props.user.id}/contacts"
       >
         Contacts
       </NavLink>

@@ -7,7 +7,7 @@
 // });
 
 function rootReducer(state = {
-  users: [],
+  user: null,
   loggedIn: false,
   currentUserId: null,
   loading: false
@@ -20,24 +20,26 @@ function rootReducer(state = {
       }
     case 'LOGIN':
       console.log("LOGIN CASE", action)
-      return { ...state,
+      return {
+        user: action.user,
         loggedIn: true,
         currentUserId: action.user.id,
         loading: false
       }
     case 'LOGOUT':
-      return { ...state,
+      return {
+        user: null,
         loggedIn: false,
         currentUserId: null,
         loading: false
       }
-    case 'ADD_USERS':
-      console.log("in action add_users", action)
-      return {
-        ...state,
-        users: action.users,
-        loading: false
-      }
+    // case 'ADD_USERS':
+    //   console.log("in action add_users", action)
+    //   return {
+    //     ...state,
+    //     users: action.users,
+    //     loading: false
+    //   }
     default:
       return state;
   }
