@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+// import logo from './logo.svg';
+import logo from '../logo.svg';
 
 class Title extends React.Component {
   handleLoading = () => {
@@ -7,7 +9,8 @@ class Title extends React.Component {
       return (
         <div>
           <h1>The Black Book</h1>
-          <h2>Loading...</h2>
+          <img src={logo} className="App-logo" alt="logo" />
+          {/* <h2>Loading...</h2> */}
         </div>
       )
     } else {

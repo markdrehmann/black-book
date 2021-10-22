@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
 import { BrowserRouter as Router, Route, Switch, useHistory } from 'react-router-dom';
@@ -29,7 +29,7 @@ function App () {
           </Switch>
 
           <footer className="App-footer">
-            <img src={logo} className="App-logo" alt="logo" />
+            {/* <img src={logo} className="App-logo" alt="logo" /> */}
           </footer>
         </Router>
       </div>
