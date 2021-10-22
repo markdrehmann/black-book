@@ -7,9 +7,9 @@
 // });
 
 function rootReducer(state = {
-  user: null,
-  loggedIn: false,
-  currentUserId: null,
+  user: {},
+  // loggedIn: false,
+  // currentUserId: null,
   loading: false
 }, action) {
   switch(action.type) {
@@ -19,18 +19,18 @@ function rootReducer(state = {
         loading: true
       }
     case 'LOGIN':
-      console.log("LOGIN CASE", action)
+      // console.log("LOGIN CASE", action)
       return {
         user: action.user,
-        loggedIn: true,
-        currentUserId: action.user.id,
+        // loggedIn: true,
+        // currentUserId: action.user.id,
         loading: false
       }
     case 'LOGOUT':
       return {
-        user: null,
-        loggedIn: false,
-        currentUserId: null,
+        user: {},
+        // loggedIn: false,
+        // currentUserId: null,
         loading: false
       }
     // case 'ADD_USERS':

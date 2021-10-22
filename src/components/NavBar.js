@@ -1,8 +1,12 @@
-import React from 'react';
+// import React from 'react';
+import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { logout } from "../actions/userActions";
 
-const NavBar = ({loggedIn}) => {
-  if (loggedIn) {
+
+const NavBar = props => {
+  // console.log("NavBar", props)
+  if (props.loggedIn) {
     return (
       <div className='NavBar'>
       <NavLink 
@@ -13,13 +17,14 @@ const NavBar = ({loggedIn}) => {
       </NavLink>
       <NavLink 
         style={{ marginRight: '10px' }} 
-        to="/users/${this.props.user.id}/contacts"
+        to="/contacts"
       >
         Contacts
       </NavLink>
       <NavLink 
         style={{ marginRight: '10px' }} 
-        to="/logout"
+        to="/"
+        onClick={props.logout}
       >
         Log Out
       </NavLink>
@@ -50,4 +55,12 @@ const NavBar = ({loggedIn}) => {
   );}
 }
 
-export default NavBar;
+const mapStateToProps = state => {
+  return {
+    // user: state.user,
+    // loggedIn: Object.keys(state.user).length === 0 ? false : true,
+    loggedIn: !state.user
+  }
+}
+
+export default connect(mapStateToProps, {logout})(NavBar);

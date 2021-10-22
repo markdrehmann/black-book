@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { withRouter, Redirect } from 'react-router-dom';
+import { loginUser } from '../../actions/userActions';
 
 class Login extends Component {
   state = {
@@ -15,24 +17,14 @@ class Login extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    // console.log("handleSubmit in Login.js", this.state);
-    this.props.loginUser(this.state);
-    // this.props.history.push(`/user/${this.props.currentUserId}`)
+    this.props.loginUser(this.state, this.props.history);
     this.setState({username: '', password: ''})
-    console.log("handleSubmit IN LOGIN.JS", this.props.user)
   }
 
   render() {
-    
-    if (this.props.loggedIn) { return (
-        <Redirect push to={`/user/${this.props.currentUserId}`} />
-      )} 
-    
-
     return(
       <div>
         <h2>Log In!</h2>
-        <h1>{this.props.user}</h1>
         <form onSubmit={this.handleSubmit}>
           <label>Username: </label>
           <input type='text' name='username' value={this.state.username} onChange={this.handleChange}/><br/><br/>
@@ -45,4 +37,11 @@ class Login extends Component {
   }
 }
 
-export default Login
+const mapStateToProps = state => {
+  return {
+    // loggedIn: Object.keys(state.user).length === 0 ? false : true
+    loggedIn: !state.user
+  }
+}
+
+export default withRouter(connect(mapStateToProps, { loginUser })(Login))

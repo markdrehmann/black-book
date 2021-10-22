@@ -15,6 +15,7 @@ import Title from './components/Title';
 import User from './components/users/User';
 import Contacts from './containers/ContactsContainer';
 import Contact from './components/Contact';
+// import Logout from './components/users/Logout';
 
 
 // import Logout from './components/users/Logout';
@@ -32,6 +33,7 @@ function App () {
             <Route exact path='/user' component={User} history={history} />
             <Route exact path='/contacts' component={Contacts} history={history} />
             <Route exact path='/contacts/:id' component={Contact} history={history} />
+            {/* <Route exact path='/logout' component={Logout} history={history} /> */}
             <Route exact path='/' component={Home} history={history} />
           </Switch>
 
@@ -65,9 +67,9 @@ export default App
 
 // export default connect(mapStateToProps, mapDispatchToProps)(App);
 
-{/* <NavBar loggedIn={this.props.loggedIn} /> */}
-{/* <Route exact path="/" component={Home} />
-            <Route exact path="/signup" render={(props) => (<NewUser {...props} createUser={this.props.createUser} currentUserId={this.props.currentUserId} />)} />
-            <Route exact path="/login" render={(props) => (<Login {...props} loginUser={this.props.loginUser} user={this.props.user} loading={this.props.loading} />)} />
-            <Route exact path="/users/:id/contacts" render={(props) => (<User {...props} user={this.props.users} />)}/>
-            <Route exact path="/logout" render={(props) => (<Logout {...props} loggedIn={this.props.loggedIn} currentUserId={this.props.currentUserId} logout={this.props.logout} user={this.props.users} />)}/> */}
+// {/* <NavBar loggedIn={this.props.loggedIn} /> */}
+// {/* <Route exact path="/" component={Home} />
+//             <Route exact path="/signup" render={(props) => (<NewUser {...props} createUser={this.props.createUser} currentUserId={this.props.currentUserId} />)} />
+//             <Route exact path="/login" render={(props) => (<Login {...props} loginUser={this.props.loginUser} user={this.props.user} loading={this.props.loading} />)} />
+//             <Route exact path="/users/:id/contacts" render={(props) => (<User {...props} user={this.props.users} />)}/>
+//             <Route exact path="/logout" render={(props) => (<Logout {...props} loggedIn={this.props.loggedIn} currentUserId={this.props.currentUserId} logout={this.props.logout} user={this.props.users} />)}/> */}

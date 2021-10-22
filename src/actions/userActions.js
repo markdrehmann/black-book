@@ -25,7 +25,7 @@ export const createUser = (user) => {
   }
 }
 
-export const loginUser = (user) => {
+export const loginUser = (user, history) => {
   return (dispatch) => {
     dispatch({type: 'LOADING'})
     // console.log("Inside loginUser, right before fetch", user)
@@ -38,10 +38,20 @@ export const loginUser = (user) => {
       body: JSON.stringify(user)
     })
       .then(res => res.json())
-      .then(user => {dispatch({type: 'LOGIN', user})}, console.log('end of fetch', user))
+      .then(response => {
+        if (response.errors) {
+          alert(response.errors)
+        } else {
+          dispatch({type: 'LOGIN', response})
+          history.push('/')
+        }
+      })
+      .catch(console.log)
+      // .then(user => {dispatch({type: 'LOGIN', user})}, console.log('end of fetch', user))
   }
 }
 
 export const logout = () => {
+  console.log("LOGOUT ACTION")
   return (dispatch) => {dispatch({type: 'LOGOUT'})}
 }
