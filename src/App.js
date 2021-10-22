@@ -37,29 +37,3 @@ function App () {
 }
 
 export default App
-
-// const mapStateToProps = state => {
-//   return {
-//     users: state.user,
-//     loggedIn: state.loggedIn,
-//     currentUserId: state.currentUserId,
-//     loading: state.loading
-//   }
-// }
-
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     logout: () => dispatch(logout()),
-//     createUser: (user) => dispatch(createUser(user)),
-//     loginUser: (user) => dispatch(loginUser(user)),
-//   };
-// }
-
-// export default connect(mapStateToProps, mapDispatchToProps)(App);
-
-// {/* <NavBar loggedIn={this.props.loggedIn} /> */}
-// {/* <Route exact path="/" component={Home} />
-//             <Route exact path="/signup" render={(props) => (<NewUser {...props} createUser={this.props.createUser} currentUserId={this.props.currentUserId} />)} />
-//             <Route exact path="/login" render={(props) => (<Login {...props} loginUser={this.props.loginUser} user={this.props.user} loading={this.props.loading} />)} />
-//             <Route exact path="/users/:id/contacts" render={(props) => (<User {...props} user={this.props.users} />)}/>
-//             <Route exact path="/logout" render={(props) => (<Logout {...props} loggedIn={this.props.loggedIn} currentUserId={this.props.currentUserId} logout={this.props.logout} user={this.props.users} />)}/> */}
