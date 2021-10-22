@@ -38,13 +38,11 @@ export const loginUser = (user) => {
       body: JSON.stringify(user)
     })
       .then(res => res.json())
-      .then(data => console.log(data))
+      .then(user => {dispatch({type: 'LOGIN', user})})
   }
 }
 
-export const login = (user) => {
-  return (dispatch) => {dispatch({type: 'LOGIN'}, user)}
-}
+// {dispatch({type: 'ADD_USERS', users: data})}
 
 export const logout = () => {
   return (dispatch) => {dispatch({type: 'LOGOUT'})}
