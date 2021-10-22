@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 class Title extends React.Component {
   handleLoading = () => {
-    console.log(this.props.loading)
     if(this.props.loading) {
       return (
         <div>
