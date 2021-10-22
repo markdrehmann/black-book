@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter, Redirect } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { loginUser } from '../../actions/userActions';
 
 class Login extends Component {
@@ -39,7 +39,6 @@ class Login extends Component {
 
 const mapStateToProps = state => {
   return {
-    // loggedIn: Object.keys(state.user).length === 0 ? false : true
     loggedIn: !state.user
   }
 }

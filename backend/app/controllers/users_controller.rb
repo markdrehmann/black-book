@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       :contacts => {:only => [:id, :first_name, :last_name, :phone, :email, :address, :user_id], :include => [:notes => {:only => [:id, :text, :contact_id]}]
       }]
     else
-      render json: { errors: "what is happening?" }
+      render json: { errors: "Login Failed! Womp womp." }
     end
   end
 

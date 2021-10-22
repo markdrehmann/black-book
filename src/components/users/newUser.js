@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-// import Home from '../Home';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { createUser } from '../../actions/userActions';
 
 class NewUser extends Component {
   state = {
@@ -15,8 +17,7 @@ class NewUser extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.createUser(this.state);
-    // this.props.history.push(`/user/${this.props.currentUserId}`)
+    this.props.createUser(this.state, this.props.history);
     this.setState({username: '', password: ''})
   }
 
@@ -36,4 +37,10 @@ class NewUser extends Component {
   }
 }
 
-export default NewUser
+const mapStateToProps = state => {
+  return {
+    loggedIn: !state.user
+  }
+}
+
+export default withRouter(connect(mapStateToProps, { createUser })(NewUser))

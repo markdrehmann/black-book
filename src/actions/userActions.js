@@ -7,7 +7,7 @@
 //   }
 // }
 
-export const createUser = (user) => {
+export const createUser = (user, history) => {
   return (dispatch) => {
     dispatch({type: 'LOADING'})
     // console.log('INSIDE CREATEUSER, PRE-FETCH', user)
@@ -17,11 +17,18 @@ export const createUser = (user) => {
         "Accept": "application/json",
         "Content-Type": "application/json"
       },
-      // mode: "cors",
       body: JSON.stringify(user)
     })
       .then(res => res.json())
-      .then(user => {dispatch({type: 'LOGIN', user})})
+      .then(response => {
+        if (response.errors) {
+          alert(response.errors)
+        } else {
+          dispatch({type: 'LOGIN', response})
+          history.push('/')
+        }
+      })
+      .catch(console.log)
   }
 }
 
@@ -47,11 +54,10 @@ export const loginUser = (user, history) => {
         }
       })
       .catch(console.log)
-      // .then(user => {dispatch({type: 'LOGIN', user})}, console.log('end of fetch', user))
   }
 }
 
 export const logout = () => {
-  console.log("LOGOUT ACTION")
+  // console.log("LOGOUT ACTION")
   return (dispatch) => {dispatch({type: 'LOGOUT'})}
 }
