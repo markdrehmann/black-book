@@ -18,7 +18,7 @@ class ContactsContainer extends React.Component {
           </tr>
           </thead>
           
-            {contacts ? <tbody>{contacts.map(contact => <Contact key={contact.id} contact={contact} />)}</tbody> : alert("No Contacts Yet!")}
+            {contacts ? <tbody>{contacts.map(contact => <Contact key={contact.id} contact={contact} />)}</tbody> : '' }
           
         </table>
       </div>

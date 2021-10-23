@@ -1,5 +1,5 @@
 const Note = props => {
-  {console.log(props)}
+  // {console.log(props)}
   return (
     <li>
       {props.note.text}

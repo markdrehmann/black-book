@@ -72,7 +72,7 @@ export const createContact = (contact, history) => {
           alert(response.errors)
         } else {
           dispatch({type: 'ADD_CONTACT', response})
-          history.push(`/contacts/${response.id}`)
+          history.push(`/contacts`)
         }
       })
       .catch(console.log)
@@ -96,7 +96,7 @@ export const createNote = (note, history) => {
           alert(response.errors)
         } else {
           dispatch({type: 'ADD_NOTE', response})
-          history.push(`/contacts/${response.contact_id}`)
+          history.push(`/contacts/${note.contact_id}`)
         }
       })
       .catch(console.log)

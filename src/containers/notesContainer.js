@@ -7,15 +7,21 @@ import { NavLink } from 'react-router-dom';
 class NotesContainer extends React.Component {
   renderNotes = () => {
     let notes = this.props.contact.notes
-    return (
-      <ul>
-        {notes.map(note => <Note key={note.id} note={note} />)}
-      </ul>
-    )
+    if (notes) {
+      return (
+        <ul>
+          {notes.map(note => <Note key={note.id} note={note} />)}
+        </ul>
+      )
+    } else {
+      return (
+        <p>No notes yet!</p>
+      )
+    }
   }
 
   render() {
-    console.log(this.props)
+    // console.log(this.props)
     return(
       <>
         <h4>Notes</h4>
