@@ -5399,3 +5399,19 @@ Processing by ContactsController#create as JSON
 Completed 200 OK in 54ms (Views: 1.8ms | ActiveRecord: 15.7ms | Allocations: 2613)
 
 
+Started POST "/users/login" for ::1 at 2021-10-22 18:25:51 -0700
+Processing by UsersController#login as JSON
+  Parameters: {"username"=>"mark", "password"=>"[FILTERED]", "user"=>{"username"=>"mark"}}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:10:in `login'
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "mark"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `login'
+  [1m[36mContact Load (10.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (3.7ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 5]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 6]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+Completed 200 OK in 434ms (Views: 67.2ms | ActiveRecord: 21.4ms | Allocations: 3475)
+
+
