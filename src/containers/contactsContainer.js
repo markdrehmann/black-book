@@ -6,10 +6,22 @@ class ContactsContainer extends React.Component {
   renderContacts = () => {
     let contacts = this.props.contacts
     return(
-      <>
-        {contacts ? contacts.map(contact => <Contact key={contact.id} contact={contact} />) : <p>No Contacts Yet!</p>}
-        {/* pass contact through contacts.map, also pass edit and delete contacts... */}
-      </>
+      <div>
+        <table className='contact-table'>
+          <thead>
+          <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Address</th>
+          </tr>
+          </thead>
+          
+            {contacts ? <tbody>{contacts.map(contact => <Contact key={contact.id} contact={contact} />)}</tbody> : 'No Contacts Yet!'}
+          
+        </table>
+          {/* pass contact through contacts.map, also pass edit and delete contacts... */}
+      </div>
     )
   }
 

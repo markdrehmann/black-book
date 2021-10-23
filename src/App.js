@@ -9,7 +9,7 @@ import NavBar from './components/NavBar';
 import Title from './components/Title';
 import User from './components/users/User';
 import Contacts from './containers/ContactsContainer';
-import Contact from './components/Contact';
+import ShowContact from './components/ShowContact';
 
 function App () {
   const history = useHistory();
@@ -23,7 +23,7 @@ function App () {
             <Route exact path='/signup' component={NewUser} history={history} />
             <Route exact path='/user' component={User} history={history} />
             <Route exact path='/contacts' component={Contacts} history={history} />
-            <Route exact path='/contacts/:id' component={Contact} history={history} />
+            <Route exact path='/contacts/:id' component={ShowContact} history={history} />
             <Route exact path='/' component={Home} history={history} />
           </Switch>
         </Router>
