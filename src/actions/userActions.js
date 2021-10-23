@@ -10,7 +10,6 @@
 export const createUser = (user, history) => {
   return (dispatch) => {
     dispatch({type: 'LOADING'})
-    // console.log('INSIDE CREATEUSER, PRE-FETCH', user)
     fetch("http://localhost:3001/users", {
       method: "POST",
       headers: {
@@ -35,7 +34,6 @@ export const createUser = (user, history) => {
 export const loginUser = (user, history) => {
   return (dispatch) => {
     dispatch({type: 'LOADING'})
-    // console.log("Inside loginUser, right before fetch", user)
     fetch("http://localhost:3001/users/login", {
       method: "POST",
       headers: {
@@ -52,7 +50,6 @@ export const loginUser = (user, history) => {
           dispatch({type: 'LOGIN', response})
           history.push('/user')
         }
-        // console.log(response)
       })
       .catch(console.log)
   }
@@ -61,7 +58,6 @@ export const loginUser = (user, history) => {
 export const createContact = (contact, history) => {
   return (dispatch) => {
     dispatch({type: 'LOADING'})
-    // console.log('INSIDE CREATECONTACT, PRE-FETCH', user)
     fetch("http://localhost:3001/contacts", {
       method: "POST",
       headers: {
@@ -84,6 +80,5 @@ export const createContact = (contact, history) => {
 }
 
 export const logout = () => {
-  // console.log("LOGOUT ACTION")
   return (dispatch) => {dispatch({type: 'LOGOUT'})}
 }
