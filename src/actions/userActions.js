@@ -80,7 +80,27 @@ export const createContact = (contact, history) => {
 }
 
 export const createNote = (note, history) => {
-  
+  return (dispatch) => {
+    dispatch({type: 'LOADING'})
+    fetch("http://localhost:3001/notes", {
+      method: "POST",
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(note)
+    })
+      .then(res => res.json())
+      .then(response => {
+        if (response.errors) {
+          alert(response.errors)
+        } else {
+          dispatch({type: 'ADD_NOTE', response})
+          history.push(`/contacts/${response.contact_id}`)
+        }
+      })
+      .catch(console.log)
+  }
 }
 
 export const deleteContact = (id, history) => {

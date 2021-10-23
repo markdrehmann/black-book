@@ -2,7 +2,7 @@ function rootReducer(state = {
   user: {},
   loading: false
 }, action) {
-  // let idx;
+  let idx;
   switch(action.type) {
     case 'LOADING':
       return {
@@ -34,7 +34,14 @@ function rootReducer(state = {
     case 'UPDATE_CONTACT':
       return state // placeholder -- idx gets involved...maybe
     case 'ADD_NOTE':
-      return state // placeholder
+      idx = state.user.contacts.findIndex(c => c.id === action.response.contact_id)
+      return {
+        ...state,
+        user: {
+          ...state.user, contacts: []
+        },
+        loading: false // NEED TO FINISH THIS ACTION, THEN GO INTO NOTES_CONTROLLER IN THE API
+      }
     case 'DELETE_NOTE':
       return state // placeholder -- idx gets involved...maybe
     default:
