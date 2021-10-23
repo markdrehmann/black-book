@@ -21,7 +21,6 @@ class ContactsContainer extends React.Component {
             {contacts ? <tbody>{contacts.map(contact => <Contact key={contact.id} contact={contact} />)}</tbody> : alert("No Contacts Yet!")}
           
         </table>
-          {/* pass contact through contacts.map, also pass edit and delete contacts... */}
       </div>
     )
   }

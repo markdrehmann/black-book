@@ -21,7 +21,12 @@ class ContactsController < ApplicationController
     end
   end
 
+  def update
+    contact = Contact.find_by(id: params[:id])
+  end
+
   def destroy
+    byebug
     contact = Contact.find_by(id: params[:id])
     contact.destroy
     render json: contact

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+// need to import edit and delete ... functionality
 
 class ShowContact extends Component {
 
