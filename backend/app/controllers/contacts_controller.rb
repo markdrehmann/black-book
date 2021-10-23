@@ -15,7 +15,10 @@ class ContactsController < ApplicationController
       user_id: params[:user_id]
     )
     if contact.save
-      render json: contact, except: [:created_at, :updated_at]
+      user = contact.user
+      render json: user, :include => [
+      :contacts => {:only => [:id, :first_name, :last_name, :phone, :email, :address, :user_id], :include => [:notes => {:only => [:id, :text, :contact_id]}]
+      }]
     else
       render json: { errors: contact.errors.full_messages}
     end
