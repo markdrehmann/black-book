@@ -23,7 +23,7 @@ function rootReducer(state = {
       return {
         ...state,
         user: {
-          ...state.user, contacts: [...state.user.contacts, action.response]},
+          ...state.user, contacts: [...state.user.contacts, action.response]}, // when contacts is empty, we get an error...
         loading: false
       }
     case 'DELETE_CONTACT':
