@@ -2,7 +2,7 @@ function rootReducer(state = {
   user: {},
   loading: false
 }, action) {
-  let idx;
+  // let idx;
   switch(action.type) {
     case 'LOADING':
       return {

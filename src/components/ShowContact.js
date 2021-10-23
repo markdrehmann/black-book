@@ -6,11 +6,16 @@ class ShowContact extends Component {
   render() {
     let idx = Number(this.props.match.params.id)
     let contact = this.props.user.contacts.find(c => c.id === idx)
-    console.log(contact)
+
     return (
       <>
-        <p>Contact Show. {contact.first_name}. should have the link for editing it or deleting</p>
-        {/* <Note /> also, this is where Notes will be */}
+        <h3>{contact.first_name} {contact.last_name}</h3>
+        <p><b>Phone:</b> {contact.phone}<br/><br/>
+        <b>Email:</b> {contact.email}<br/><br/>
+        <b>Address:</b> {contact.address}</p>
+        <p>Edit Contact -- Delete Contact</p>
+        <h4>Notes</h4>
+        <p>Add Note</p>
       </>
     )
   }
