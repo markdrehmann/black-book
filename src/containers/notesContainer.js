@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Note from '../components/Note';
-// import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 class NotesContainer extends React.Component {
@@ -19,6 +19,12 @@ class NotesContainer extends React.Component {
     return(
       <>
         <h4>Notes</h4>
+        <NavLink 
+          style={{ marginRight: '10px' }} 
+          to={`/contacts/${this.props.contact.id}/notes/new`}
+          >
+          Add Note
+        </NavLink> <br/><br/>
         {this.renderNotes()}
       </>
     )

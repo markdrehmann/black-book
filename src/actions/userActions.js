@@ -79,6 +79,10 @@ export const createContact = (contact, history) => {
   }
 }
 
+export const createNote = (note, history) => {
+  
+}
+
 export const deleteContact = (id, history) => {
   return (dispatch) => {
     dispatch({type: 'LOADING'})
