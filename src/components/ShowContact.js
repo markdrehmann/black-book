@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { deleteContact } from '../actions/userActions';
+import NotesContainer from '../containers/NotesContainer';
+// import { NavLink } from 'react-router-dom';
 // need to import edit and delete ... functionality
 
 class ShowContact extends Component {
@@ -14,9 +17,8 @@ class ShowContact extends Component {
         <p><b>Phone:</b> {contact.phone}<br/><br/>
         <b>Email:</b> {contact.email}<br/><br/>
         <b>Address:</b> {contact.address}</p>
-        <p>Edit Contact -- Delete Contact</p>
-        <h4>Notes</h4>
-        <p>Add Note</p>
+        <p>Edit Contact -- Delete Contact</p> {/* THESE NEED TO BE MADE INTO DYNAMIC LINKS */}
+        <NotesContainer contact={contact}/>
       </>
     )
   }
@@ -28,4 +30,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(ShowContact)
+export default connect(mapStateToProps, { deleteContact })(ShowContact)

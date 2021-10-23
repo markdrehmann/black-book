@@ -5804,3 +5804,132 @@ Processing by UsersController#login as JSON
 Completed 200 OK in 450ms (Views: 72.1ms | ActiveRecord: 13.6ms | Allocations: 4318)
 
 
+Started POST "/users/login" for ::1 at 2021-10-23 00:56:33 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#login as JSON
+  Parameters: {"username"=>"Mark", "password"=>"[FILTERED]", "user"=>{"username"=>"Mark"}}
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Mark"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `login'
+  [1m[36mContact Load (3.0ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (2.8ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 8]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 9]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 10]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+Completed 200 OK in 540ms (Views: 143.2ms | ActiveRecord: 17.4ms | Allocations: 12132)
+
+
+Started POST "/contacts/10" for ::1 at 2021-10-23 00:56:40 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/contacts/10"):
+  
+Started POST "/contacts/10" for ::1 at 2021-10-23 00:56:40 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/contacts/10"):
+  
+Started POST "/contacts/10" for ::1 at 2021-10-23 00:57:10 -0700
+Started POST "/contacts/10" for ::1 at 2021-10-23 00:57:10 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/contacts/10"):
+  
+  
+ActionController::RoutingError (No route matches [POST] "/contacts/10"):
+  
+Started POST "/contacts/10" for ::1 at 2021-10-23 00:57:13 -0700
+Started POST "/contacts/10" for ::1 at 2021-10-23 00:57:13 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/contacts/10"):
+  
+  
+ActionController::RoutingError (No route matches [POST] "/contacts/10"):
+  
+Started POST "/users/login" for ::1 at 2021-10-23 00:58:26 -0700
+Processing by UsersController#login as JSON
+  Parameters: {"username"=>"Mark", "password"=>"[FILTERED]", "user"=>{"username"=>"Mark"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Mark"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `login'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 8]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 9]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 10]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+Completed 200 OK in 382ms (Views: 58.0ms | ActiveRecord: 2.0ms | Allocations: 3815)
+
+
+Started POST "/users/login" for ::1 at 2021-10-23 01:16:37 -0700
+Processing by UsersController#login as JSON
+  Parameters: {"username"=>"Mark", "password"=>"[FILTERED]", "user"=>{"username"=>"Mark"}}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:10:in `login'
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Mark"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `login'
+  [1m[36mContact Load (2.6ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (3.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 8]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.8ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 9]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 10]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+Completed 200 OK in 487ms (Views: 65.4ms | ActiveRecord: 23.2ms | Allocations: 4321)
+
+
+Started POST "/users/login" for ::1 at 2021-10-23 01:16:55 -0700
+Processing by UsersController#login as JSON
+  Parameters: {"username"=>"Joe", "password"=>"[FILTERED]", "user"=>{"username"=>"Joe"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Joe"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `login'
+  [1m[36mContact Load (7.5ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (3.5ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 2]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 3]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 4]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+Completed 200 OK in 938ms (Views: 588.9ms | ActiveRecord: 25.3ms | Allocations: 7235)
+
+
+Started POST "/users/login" for ::1 at 2021-10-23 01:20:21 -0700
+Processing by UsersController#login as JSON
+  Parameters: {"username"=>"Joe", "password"=>"[FILTERED]", "user"=>{"username"=>"Joe"}}
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Joe"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `login'
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 2]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 3]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 4]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+Completed 200 OK in 379ms (Views: 51.4ms | ActiveRecord: 6.8ms | Allocations: 4829)
+
+
+Started POST "/users/login" for ::1 at 2021-10-23 01:20:35 -0700
+Processing by UsersController#login as JSON
+  Parameters: {"username"=>"Joe", "password"=>"[FILTERED]", "user"=>{"username"=>"Joe"}}
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Joe"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `login'
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.6ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 2]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 3]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.5ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 4]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+Completed 200 OK in 369ms (Views: 49.7ms | ActiveRecord: 5.2ms | Allocations: 4829)
+
+

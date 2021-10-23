@@ -8,7 +8,7 @@ import Login from './components/users/Login';
 import NavBar from './components/NavBar';
 import Title from './components/Title';
 import User from './components/users/User';
-import Contacts from './containers/ContactsContainer';
+import ContactsContainer from './containers/ContactsContainer';
 import ShowContact from './components/ShowContact';
 import NewContact from './components/NewContact';
 
@@ -23,7 +23,7 @@ function App () {
             <Route exact path='/login' component={Login} history={history} />
             <Route exact path='/signup' component={NewUser} history={history} />
             <Route exact path='/user' component={User} history={history} />
-            <Route exact path='/contacts' component={Contacts} history={history} />
+            <Route exact path='/contacts' component={ContactsContainer} history={history} />
             <Route exact path='/contacts/new' component={NewContact} history={history} />
             <Route exact path='/contacts/:id' component={ShowContact} history={history} />
             <Route exact path='/' component={Home} history={history} />

@@ -27,7 +27,10 @@ function rootReducer(state = {
         loading: false
       }
     case 'DELETE_CONTACT':
-      return state // placeholder -- idx gets involved...maybe
+      return {
+        ...state,
+        loading: false
+      }
     case 'UPDATE_CONTACT':
       return state // placeholder -- idx gets involved...maybe
     case 'ADD_NOTE':
