@@ -58,6 +58,31 @@ export const loginUser = (user, history) => {
   }
 }
 
+export const createContact = (contact, history) => {
+  return (dispatch) => {
+    dispatch({type: 'LOADING'})
+    // console.log('INSIDE CREATECONTACT, PRE-FETCH', user)
+    fetch("http://localhost:3001/contacts", {
+      method: "POST",
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(contact)
+    })
+      .then(res => res.json())
+      .then(response => {
+        if (response.errors) {
+          alert(response.errors)
+        } else {
+          dispatch({type: 'ADD_CONTACT', response})
+          history.push(`/contacts/${response.id}`)
+        }
+      })
+      .catch(console.log)
+  }
+}
+
 export const logout = () => {
   // console.log("LOGOUT ACTION")
   return (dispatch) => {dispatch({type: 'LOGOUT'})}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import Contact from '../components/Contact';
 
 class ContactsContainer extends React.Component {
@@ -29,7 +30,12 @@ class ContactsContainer extends React.Component {
     return(
       <>
         <h3>Your Contacts</h3>
-        {/* <NewContact />  */}
+        <NavLink 
+          style={{ marginRight: '10px' }} 
+          to="/contacts/new"
+          >
+          Add New Contact
+        </NavLink> <br/><br/>
         {this.renderContacts()}
       </>
     )

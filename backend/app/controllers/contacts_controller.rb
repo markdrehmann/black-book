@@ -7,14 +7,19 @@ class ContactsController < ApplicationController
   end
 
   def create
-    contact = Contact.create(
+    contact = Contact.new(
       first_name: params[:first_name],
       last_name: params[:last_name],
       phone: params[:phone],
       email: params[:email],
       address: params[:address],
-      user_id: params[:user_id], # or potentially user.id?
+      user_id: params[:user_id]
     )
+    if contact.save
+      render json: contact, except: [:created_at, :updated_at]
+    else
+      render json: { errors: contact.errors.full_messages}
+    end
   end
 
   def destroy
@@ -23,24 +28,3 @@ class ContactsController < ApplicationController
     render json: contact
   end
 end
-
-# This is JS example for making new contact - from Git 'er Done
-# function newTask(event) {
-#   event.preventDefault();
-#   let input = event.target.firstElementChild;
-#   let description = input.value;
-#   if (description) {
-#     let id = input.getAttribute("data-list-id");
-#     event.target.reset();
-#     fetch("http://localhost:3000/tasks", {
-#     method: "POST",
-#     headers: { "Content-Type" : "application/json" },
-#     body: JSON.stringify({"description" : `${description}`, "list_id" : `${id}`})
-#     })
-#     .then(response => response.json())
-#     .then(task => console.log(task))
-#     .then(() => getLists());
-#   } else {
-#     alert("Can't be blank!");
-#   }
-# }

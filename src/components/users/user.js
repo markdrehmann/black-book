@@ -8,7 +8,7 @@ class User extends React.Component {
     // console.log(this.props)
     return(
       <>
-        <h1>Welcome {this.props.user.username}!</h1>
+        <h1>What up, {this.props.user.username}?!</h1>
         <ContactsContainer />
       </>
     )

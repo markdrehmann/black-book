@@ -26,6 +26,13 @@ function rootReducer(state = {
         user: {},
         loading: false
       }
+    case 'ADD_CONTACT':
+      return {
+        ...state,
+        user: {
+          ...state.user, contacts: [...state.user.contacts, action.response]},
+        loading: false
+      }
     default:
       return state;
   }
