@@ -6473,3 +6473,320 @@ Processing by ContactsController#create as JSON
 Completed 200 OK in 111ms (Views: 80.0ms | ActiveRecord: 6.3ms | Allocations: 4155)
 
 
+Started POST "/users/login" for ::1 at 2021-10-23 16:36:51 -0700
+  [1m[35m (7.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as JSON
+  Parameters: {"username"=>"Mark", "password"=>"[FILTERED]", "user"=>{"username"=>"Mark"}}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Mark"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `login'
+  [1m[36mContact Load (5.6ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (2.8ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 8]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 9]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 10]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+Completed 200 OK in 545ms (Views: 96.4ms | ActiveRecord: 15.1ms | Allocations: 21554)
+
+
+Started POST "/users/login" for ::1 at 2021-10-23 16:37:24 -0700
+Processing by UsersController#login as JSON
+  Parameters: {"username"=>"Mark", "password"=>"[FILTERED]", "user"=>{"username"=>"Mark"}}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Mark"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `login'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 8]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 9]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 10]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+Completed 200 OK in 322ms (Views: 14.3ms | ActiveRecord: 3.5ms | Allocations: 3923)
+
+
+Started POST "/contacts" for ::1 at 2021-10-23 16:38:04 -0700
+Processing by ContactsController#create as JSON
+  Parameters: {"first_name"=>"Test", "last_name"=>"", "phone"=>"", "email"=>"", "address"=>"", "user_id"=>12, "contact"=>{"first_name"=>"Test", "last_name"=>"", "phone"=>"", "email"=>"", "address"=>"", "user_id"=>12}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/contacts_controller.rb:17:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:17:in `create'
+  [1m[36mContact Create (1.1ms)[0m  [1m[32mINSERT INTO "contacts" ("first_name", "last_name", "phone", "email", "address", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Test"], ["last_name", ""], ["phone", ""], ["email", ""], ["address", ""], ["user_id", 12], ["created_at", "2021-10-23 23:38:04.831037"], ["updated_at", "2021-10-23 23:38:04.831037"]]
+  ↳ app/controllers/contacts_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (7.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/contacts_controller.rb:17:in `create'
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 12]]
+  ↳ app/controllers/contacts_controller.rb:19:in `create'
+  [1m[36mNote Load (0.9ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 8]]
+  ↳ app/controllers/contacts_controller.rb:19:in `create'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 9]]
+  ↳ app/controllers/contacts_controller.rb:19:in `create'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 10]]
+  ↳ app/controllers/contacts_controller.rb:19:in `create'
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 16]]
+  ↳ app/controllers/contacts_controller.rb:19:in `create'
+Completed 200 OK in 35ms (Views: 12.3ms | ActiveRecord: 10.4ms | Allocations: 7276)
+
+
+Started POST "/users/login" for ::1 at 2021-10-23 17:05:01 -0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#login as JSON
+  Parameters: {"username"=>"Mark", "password"=>"[FILTERED]", "user"=>{"username"=>"Mark"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Mark"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `login'
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 8]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 9]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 10]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 16]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+Completed 200 OK in 406ms (Views: 56.6ms | ActiveRecord: 2.3ms | Allocations: 15197)
+
+
+Started POST "/contacts/16" for ::1 at 2021-10-23 17:05:10 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/contacts/16"):
+  
+Started POST "/users/login" for ::1 at 2021-10-23 17:06:18 -0700
+Processing by UsersController#login as JSON
+  Parameters: {"username"=>"Mark", "password"=>"[FILTERED]", "user"=>{"username"=>"Mark"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Mark"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `login'
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 8]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 9]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 10]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 16]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+Completed 200 OK in 347ms (Views: 15.8ms | ActiveRecord: 1.2ms | Allocations: 4746)
+
+
+Started DELETE "/contacts/16" for ::1 at 2021-10-23 17:08:40 -0700
+Processing by ContactsController#destroy as */*
+  Parameters: {"id"=>"16"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/contacts_controller.rb:32:in `destroy'
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:32:in `destroy'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:33:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/contacts_controller.rb:34:in `destroy'
+  [1m[36mContact Destroy (3.3ms)[0m  [1m[31mDELETE FROM "contacts" WHERE "contacts"."id" = ?[0m  [["id", 16]]
+  ↳ app/controllers/contacts_controller.rb:34:in `destroy'
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/contacts_controller.rb:34:in `destroy'
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 12]]
+  ↳ app/controllers/contacts_controller.rb:35:in `destroy'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 8]]
+  ↳ app/controllers/contacts_controller.rb:35:in `destroy'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 9]]
+  ↳ app/controllers/contacts_controller.rb:35:in `destroy'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 10]]
+  ↳ app/controllers/contacts_controller.rb:35:in `destroy'
+Completed 200 OK in 88ms (Views: 20.9ms | ActiveRecord: 18.0ms | Allocations: 20045)
+
+
+Started POST "/users/login" for ::1 at 2021-10-23 17:09:43 -0700
+Processing by UsersController#login as JSON
+  Parameters: {"username"=>"Mark", "password"=>"[FILTERED]", "user"=>{"username"=>"Mark"}}
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Mark"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `login'
+  [1m[36mContact Load (0.4ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 8]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 9]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 10]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+Completed 200 OK in 358ms (Views: 20.8ms | ActiveRecord: 4.6ms | Allocations: 4022)
+
+
+Started POST "/contacts" for ::1 at 2021-10-23 17:09:50 -0700
+Processing by ContactsController#create as JSON
+  Parameters: {"first_name"=>"test", "last_name"=>"", "phone"=>"", "email"=>"", "address"=>"", "user_id"=>12, "contact"=>{"first_name"=>"test", "last_name"=>"", "phone"=>"", "email"=>"", "address"=>"", "user_id"=>12}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/contacts_controller.rb:17:in `create'
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:17:in `create'
+  [1m[36mContact Create (4.6ms)[0m  [1m[32mINSERT INTO "contacts" ("first_name", "last_name", "phone", "email", "address", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "test"], ["last_name", ""], ["phone", ""], ["email", ""], ["address", ""], ["user_id", 12], ["created_at", "2021-10-24 00:09:50.380672"], ["updated_at", "2021-10-24 00:09:50.380672"]]
+  ↳ app/controllers/contacts_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/contacts_controller.rb:17:in `create'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 12]]
+  ↳ app/controllers/contacts_controller.rb:19:in `create'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 8]]
+  ↳ app/controllers/contacts_controller.rb:19:in `create'
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 9]]
+  ↳ app/controllers/contacts_controller.rb:19:in `create'
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 10]]
+  ↳ app/controllers/contacts_controller.rb:19:in `create'
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 16]]
+  ↳ app/controllers/contacts_controller.rb:19:in `create'
+Completed 200 OK in 71ms (Views: 16.5ms | ActiveRecord: 11.8ms | Allocations: 6882)
+
+
+Started DELETE "/contacts/16" for ::1 at 2021-10-23 17:09:54 -0700
+Processing by ContactsController#destroy as */*
+  Parameters: {"id"=>"16"}
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:32:in `destroy'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:33:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/contacts_controller.rb:34:in `destroy'
+  [1m[36mContact Destroy (0.5ms)[0m  [1m[31mDELETE FROM "contacts" WHERE "contacts"."id" = ?[0m  [["id", 16]]
+  ↳ app/controllers/contacts_controller.rb:34:in `destroy'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/contacts_controller.rb:34:in `destroy'
+  [1m[36mContact Load (0.9ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 12]]
+  ↳ app/controllers/contacts_controller.rb:35:in `destroy'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 8]]
+  ↳ app/controllers/contacts_controller.rb:35:in `destroy'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 9]]
+  ↳ app/controllers/contacts_controller.rb:35:in `destroy'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 10]]
+  ↳ app/controllers/contacts_controller.rb:35:in `destroy'
+Completed 200 OK in 24ms (Views: 12.6ms | ActiveRecord: 3.5ms | Allocations: 5720)
+
+
+Started POST "/users/login" for ::1 at 2021-10-23 17:10:45 -0700
+Processing by UsersController#login as JSON
+  Parameters: {"username"=>"Mark", "password"=>"[FILTERED]", "user"=>{"username"=>"Mark"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Mark"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `login'
+  [1m[36mContact Load (0.5ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.6ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 8]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 9]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 10]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+Completed 200 OK in 356ms (Views: 48.8ms | ActiveRecord: 2.4ms | Allocations: 3902)
+
+
+Started POST "/contacts" for ::1 at 2021-10-23 17:10:54 -0700
+Processing by ContactsController#create as JSON
+  Parameters: {"first_name"=>"test", "last_name"=>"", "phone"=>"", "email"=>"", "address"=>"", "user_id"=>12, "contact"=>{"first_name"=>"test", "last_name"=>"", "phone"=>"", "email"=>"", "address"=>"", "user_id"=>12}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/contacts_controller.rb:17:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:17:in `create'
+  [1m[36mContact Create (0.6ms)[0m  [1m[32mINSERT INTO "contacts" ("first_name", "last_name", "phone", "email", "address", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "test"], ["last_name", ""], ["phone", ""], ["email", ""], ["address", ""], ["user_id", 12], ["created_at", "2021-10-24 00:10:54.565033"], ["updated_at", "2021-10-24 00:10:54.565033"]]
+  ↳ app/controllers/contacts_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/contacts_controller.rb:17:in `create'
+  [1m[36mContact Load (0.3ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 12]]
+  ↳ app/controllers/contacts_controller.rb:19:in `create'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 8]]
+  ↳ app/controllers/contacts_controller.rb:19:in `create'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 9]]
+  ↳ app/controllers/contacts_controller.rb:19:in `create'
+  [1m[36mNote Load (0.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 10]]
+  ↳ app/controllers/contacts_controller.rb:19:in `create'
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 16]]
+  ↳ app/controllers/contacts_controller.rb:19:in `create'
+Completed 200 OK in 38ms (Views: 15.0ms | ActiveRecord: 5.8ms | Allocations: 6771)
+
+
+Started DELETE "/contacts/16" for ::1 at 2021-10-23 17:10:58 -0700
+Processing by ContactsController#destroy as */*
+  Parameters: {"id"=>"16"}
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:32:in `destroy'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:33:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/contacts_controller.rb:34:in `destroy'
+  [1m[36mContact Destroy (3.3ms)[0m  [1m[31mDELETE FROM "contacts" WHERE "contacts"."id" = ?[0m  [["id", 16]]
+  ↳ app/controllers/contacts_controller.rb:34:in `destroy'
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/contacts_controller.rb:34:in `destroy'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 12]]
+  ↳ app/controllers/contacts_controller.rb:35:in `destroy'
+  [1m[36mNote Load (0.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 8]]
+  ↳ app/controllers/contacts_controller.rb:35:in `destroy'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 9]]
+  ↳ app/controllers/contacts_controller.rb:35:in `destroy'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 10]]
+  ↳ app/controllers/contacts_controller.rb:35:in `destroy'
+Completed 200 OK in 34ms (Views: 19.2ms | ActiveRecord: 7.9ms | Allocations: 7617)
+
+
+Started POST "/users/login" for ::1 at 2021-10-23 17:11:18 -0700
+Processing by UsersController#login as JSON
+  Parameters: {"username"=>"Mark", "password"=>"[FILTERED]", "user"=>{"username"=>"Mark"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Mark"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `login'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 12]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 8]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 9]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 10]]
+  ↳ app/controllers/users_controller.rb:12:in `login'
+Completed 200 OK in 396ms (Views: 84.7ms | ActiveRecord: 0.9ms | Allocations: 3903)
+
+
+Started POST "/contacts" for ::1 at 2021-10-23 17:11:24 -0700
+Processing by ContactsController#create as JSON
+  Parameters: {"first_name"=>"test", "last_name"=>"", "phone"=>"", "email"=>"", "address"=>"", "user_id"=>12, "contact"=>{"first_name"=>"test", "last_name"=>"", "phone"=>"", "email"=>"", "address"=>"", "user_id"=>12}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/contacts_controller.rb:17:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:17:in `create'
+  [1m[36mContact Create (0.9ms)[0m  [1m[32mINSERT INTO "contacts" ("first_name", "last_name", "phone", "email", "address", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "test"], ["last_name", ""], ["phone", ""], ["email", ""], ["address", ""], ["user_id", 12], ["created_at", "2021-10-24 00:11:24.505213"], ["updated_at", "2021-10-24 00:11:24.505213"]]
+  ↳ app/controllers/contacts_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/contacts_controller.rb:17:in `create'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 12]]
+  ↳ app/controllers/contacts_controller.rb:19:in `create'
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 8]]
+  ↳ app/controllers/contacts_controller.rb:19:in `create'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 9]]
+  ↳ app/controllers/contacts_controller.rb:19:in `create'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 10]]
+  ↳ app/controllers/contacts_controller.rb:19:in `create'
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 16]]
+  ↳ app/controllers/contacts_controller.rb:19:in `create'
+Completed 200 OK in 24ms (Views: 12.2ms | ActiveRecord: 5.5ms | Allocations: 6771)
+
+
+Started DELETE "/contacts/16" for ::1 at 2021-10-23 17:11:28 -0700
+Processing by ContactsController#destroy as */*
+  Parameters: {"id"=>"16"}
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:32:in `destroy'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/contacts_controller.rb:33:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/contacts_controller.rb:34:in `destroy'
+  [1m[36mContact Destroy (0.5ms)[0m  [1m[31mDELETE FROM "contacts" WHERE "contacts"."id" = ?[0m  [["id", 16]]
+  ↳ app/controllers/contacts_controller.rb:34:in `destroy'
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/contacts_controller.rb:34:in `destroy'
+  [1m[36mContact Load (0.2ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts" WHERE "contacts"."user_id" = ?[0m  [["user_id", 12]]
+  ↳ app/controllers/contacts_controller.rb:35:in `destroy'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 8]]
+  ↳ app/controllers/contacts_controller.rb:35:in `destroy'
+  [1m[36mNote Load (0.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 9]]
+  ↳ app/controllers/contacts_controller.rb:35:in `destroy'
+  [1m[36mNote Load (0.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."contact_id" = ?[0m  [["contact_id", 10]]
+  ↳ app/controllers/contacts_controller.rb:35:in `destroy'
+Completed 200 OK in 18ms (Views: 7.5ms | ActiveRecord: 4.8ms | Allocations: 5700)
+
+

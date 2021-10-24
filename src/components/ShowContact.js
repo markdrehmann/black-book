@@ -10,6 +10,9 @@ class ShowContact extends Component {
   render() {
     let idx = Number(this.props.match.params.id)
     let contact = this.props.user.contacts.find(c => c.id === idx)
+    const delCon = () => {
+      this.props.deleteContact(idx, this.props.history)
+    }
 
     return (
       <>
@@ -17,7 +20,7 @@ class ShowContact extends Component {
         <p><b>Phone:</b> {contact.phone}<br/><br/>
         <b>Email:</b> {contact.email}<br/><br/>
         <b>Address:</b> {contact.address}</p>
-        <p>Edit Contact -- Delete Contact</p> {/* THESE NEED TO BE MADE INTO DYNAMIC LINKS */}
+        <p>Edit Contact -- <button onClick={delCon}>Delete Contact</button></p> {/* THESE NEED TO BE MADE INTO DYNAMIC LINKS */}
         <NotesContainer contact={contact}/>
       </>
     )

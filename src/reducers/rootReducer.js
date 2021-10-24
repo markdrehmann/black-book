@@ -6,7 +6,7 @@ function rootReducer(state = {
   },
   loading: false
 }, action) {
-  let idx;
+  // let idx;
   switch(action.type) {
     case 'LOADING':
       return {
@@ -30,7 +30,7 @@ function rootReducer(state = {
       }
     case 'DELETE_CONTACT':
       return {
-        ...state,
+        user: action.response,
         loading: false
       }
     case 'UPDATE_CONTACT':
