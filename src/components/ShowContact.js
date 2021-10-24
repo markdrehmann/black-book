@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { deleteContact } from '../actions/userActions'; // still need to add editContact
+import { deleteContact } from '../actions/userActions';
 import NotesContainer from '../containers/NotesContainer';
 
 class ShowContact extends Component {
