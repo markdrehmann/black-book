@@ -13,6 +13,11 @@ function rootReducer(state = {
         ...state,
         loading: true
       }
+    case 'FAILED_REQUEST':
+      return {
+        ...state,
+        loading: false
+      }
     case 'LOGIN':
       return {
         user: action.response,

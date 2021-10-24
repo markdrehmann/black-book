@@ -5,10 +5,9 @@ const Note = props => {
   const delNo = () => {
     props.deleteNote(props.note, props.history)
   }
-  // {console.log(props)}
   return (
     <li>
-      {props.note.text} <br/><br/> <button onClick={delNo}>Delete Note</button> <br/><br/>
+      {props.note.text} -- <button onClick={delNo}>Delete Note</button> <br/><br/>
     </li>
   )
 }

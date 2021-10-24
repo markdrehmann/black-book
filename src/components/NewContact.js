@@ -40,15 +40,15 @@ class NewContact extends Component {
         <h2>Add a Contact</h2>
         <form onSubmit={this.handleSubmit}>
           <label>First Name: </label>
-          <input type='text' autocomplete='off' name='first_name' value={this.state.first_name} onChange={this.handleChange}/><br/><br/>
+          <input type='text' autoComplete='off' name='first_name' value={this.state.first_name} onChange={this.handleChange}/><br/><br/>
           <label>Last Name: </label>
-          <input type='text' autocomplete='off' name='last_name' value={this.state.last_name} onChange={this.handleChange}/><br/><br/>
+          <input type='text' autoComplete='off' name='last_name' value={this.state.last_name} onChange={this.handleChange}/><br/><br/>
           <label>Phone: </label>
-          <input type='text' autocomplete='off' name='phone' value={this.state.phone} onChange={this.handleChange}/><br/><br/>
+          <input type='text' autoComplete='off' name='phone' value={this.state.phone} onChange={this.handleChange}/><br/><br/>
           <label>Email: </label>
-          <input type='text' autocomplete='off' name='email' value={this.state.email} onChange={this.handleChange}/><br/><br/>
+          <input type='text' autoComplete='off' name='email' value={this.state.email} onChange={this.handleChange}/><br/><br/>
           <label>Address: </label>
-          <input type='text' autocomplete='off' name='address' value={this.state.address} onChange={this.handleChange}/><br/><br/>
+          <input type='text' autoComplete='off' name='address' value={this.state.address} onChange={this.handleChange}/><br/><br/>
 
           <input type='submit' value='Really?'/>
         </form>

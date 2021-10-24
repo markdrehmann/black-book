@@ -26,7 +26,8 @@ class NotesContainer extends React.Component {
       <>
         <h4>Notes</h4>
         <NavLink 
-          style={{ marginRight: '10px' }} 
+          style={{ marginRight: '10px' }}
+          className='button'
           to={`/contacts/${this.props.contact.id}/notes/new`}
           >
           Add Note

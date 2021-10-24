@@ -22,6 +22,7 @@ export const createUser = (user, history) => {
       .then(response => {
         if (response.errors) {
           alert(response.errors)
+          dispatch({type: 'FAILED_REQUEST'})
         } else {
           dispatch({type: 'LOGIN', response})
           history.push('/user')
@@ -46,6 +47,7 @@ export const loginUser = (user, history) => {
       .then(response => {
         if (response.errors) {
           alert(response.errors)
+          dispatch({type: 'FAILED_REQUEST'})
         } else {
           dispatch({type: 'LOGIN', response})
           history.push('/user')
@@ -70,6 +72,7 @@ export const createContact = (contact, history) => {
       .then(response => {
         if (response.errors) {
           alert(response.errors)
+          dispatch({type: 'FAILED_REQUEST'})
         } else {
           dispatch({type: 'ADD_CONTACT', response})
           history.push(`/contacts`)
@@ -94,6 +97,7 @@ export const createNote = (note, history) => {
       .then(response => {
         if (response.errors) {
           alert(response.errors)
+          dispatch({type: 'FAILED_REQUEST'})
         } else {
           dispatch({type: 'ADD_NOTE', response})
           history.push(`/contacts/${note.contact_id}`)

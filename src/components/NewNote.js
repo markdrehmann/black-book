@@ -26,7 +26,7 @@ class NewNote extends Component {
 
   render() {
     let idx = Number(this.props.match.params.id)
-    let contact = this.props.user.contacts.find(c => c.id === idx)
+    let contact = this.props.user.contacts.find(c => c.id === idx) // THIS GETS AN ERROR WHEN YOU TRY TO SUBMIT AN EMPTY NOTE... WHAT?
     return(
       <div>
         <h2>Note about {contact.first_name} {contact.last_name}</h2>
