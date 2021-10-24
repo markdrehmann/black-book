@@ -1,12 +1,3 @@
-// export const fetchUsers = () => {
-//   return (dispatch) => {
-//     dispatch({type: 'LOADING'})
-//     fetch("http://localhost:3001/users")
-//       .then(res => res.json())
-//       .then(data => {dispatch({type: 'ADD_USERS', users: data})})
-//   }
-// }
-
 export const createUser = (user, history) => {
   return (dispatch) => {
     dispatch({type: 'LOADING'})
