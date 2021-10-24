@@ -24,7 +24,6 @@ class EditContact extends Component {
       address: contact.address,
       id: this.props.match.params.id
     })
-    // console.log("MOUNTED", this.state)
   }
 
   handleChange = event => {
@@ -40,17 +39,9 @@ class EditContact extends Component {
       user_id: this.props.user.id
     }
     this.props.editContact(contact, this.props.history);
-    // this.setState({
-    //   first_name: '',
-    //   last_name: '',
-    //   phone: '',
-    //   email: '',
-    //   address: ''
-    // })
   }
 
   render() {
-    // console.log(this.props, this.state)
     return(
       <div>
         <h2>Add a Contact</h2>
@@ -76,7 +67,6 @@ class EditContact extends Component {
 const mapStateToProps = state => {
   return {
     user: state.user,
-    // contact: state.user.contacts.find(c => c.id === Number(this.props.match.params.id))
   }
 }
 
