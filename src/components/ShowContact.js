@@ -18,7 +18,7 @@ class ShowContact extends Component {
         <p><b>Phone:</b> {contact.phone}<br/><br/>
         <b>Email:</b> {contact.email}<br/><br/>
         <b>Address:</b> {contact.address}</p>
-        <p><button>Edit Contact</button> -- <button onClick={delCon}>Delete Contact</button></p>
+        <p><button>Edit Contact</button> -- <button onClick={() => { if (window.confirm("Delete this fo' real?")) {delCon()}}}>Delete Contact</button></p>
         <NotesContainer contact={contact} history={this.props.history} />
       </>
     )
