@@ -25,7 +25,22 @@ class ContactsController < ApplicationController
   end
 
   def update
+    # byebug
     contact = Contact.find_by(id: params[:id])
+    user = contact.user
+    contact.first_name = params[:first_name]
+    contact.last_name = params[:last_name]
+    contact.phone = params[:phone]
+    contact.email = params[:email]
+    contact.address = params[:address]
+
+    if contact.save
+      render json: user, :include => [
+      :contacts => {:only => [:id, :first_name, :last_name, :phone, :email, :address, :user_id], :include => [:notes => {:only => [:id, :text, :contact_id]}]
+      }]
+    else
+      render json: { errors: contact.errors.full_messages}
+    end
   end
 
   def destroy

@@ -39,7 +39,10 @@ function rootReducer(state = {
         loading: false
       }
     case 'UPDATE_CONTACT':
-      return state // placeholder -- idx gets involved...maybe
+      return {
+        user: action.response,
+        loading: false
+      }
     case 'ADD_NOTE':
       return {
         user: action.response,

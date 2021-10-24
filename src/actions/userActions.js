@@ -107,6 +107,31 @@ export const createNote = (note, history) => {
   }
 }
 
+export const editContact = (contact, history) => {
+  return (dispatch) => {
+    dispatch({type: 'LOADING'})
+    fetch(`http://localhost:3001/contacts/${contact.id}`, {
+      method: "PATCH",
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(contact)
+    })
+      .then(res => res.json())
+      .then(response => {
+        if (response.errors) {
+          alert(response.errors)
+          dispatch({type: 'FAILED_REQUEST'})
+        } else {
+          dispatch({type: 'UPDATE_CONTACT', response})
+          history.push(`/contacts/${contact.id}`)
+        }
+      })
+      .catch(console.log)
+  }
+}
+
 export const deleteContact = (id, history) => {
   return (dispatch) => {
     dispatch({type: 'LOADING'})
