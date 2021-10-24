@@ -6,7 +6,6 @@ function rootReducer(state = {
   },
   loading: false
 }, action) {
-  // let idx;
   switch(action.type) {
     case 'LOADING':
       return {
@@ -59,3 +58,5 @@ function rootReducer(state = {
 }
 
 export default rootReducer;
+
+// I could make a case called 'SUCCESSFUL_REQUEST' and have it replace a bunch of these...
