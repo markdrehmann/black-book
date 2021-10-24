@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { deleteContact } from '../actions/userActions';
+import { deleteContact } from '../actions/userActions'; // still need to add editContact
 import NotesContainer from '../containers/NotesContainer';
-// import { NavLink } from 'react-router-dom';
-// need to import edit and delete ... functionality
 
 class ShowContact extends Component {
 
@@ -20,7 +18,7 @@ class ShowContact extends Component {
         <p><b>Phone:</b> {contact.phone}<br/><br/>
         <b>Email:</b> {contact.email}<br/><br/>
         <b>Address:</b> {contact.address}</p>
-        <p>Edit Contact -- <button onClick={delCon}>Delete Contact</button></p> {/* THESE NEED TO BE MADE INTO DYNAMIC LINKS */}
+        <p><button>Edit Contact</button> -- <button onClick={delCon}>Delete Contact</button></p>
         <NotesContainer contact={contact} history={this.props.history} />
       </>
     )
