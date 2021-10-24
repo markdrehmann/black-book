@@ -1,7 +1,6 @@
 class ContactsController < ApplicationController
   def index
     contacts = Contact.all
-    # user_contacts = contacts.select {|c| c.user_id == params[:user_id] }
     render json: contacts, except: [:created_at, :updated_at]
   end
 
