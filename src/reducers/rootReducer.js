@@ -41,7 +41,10 @@ function rootReducer(state = {
         loading: false
       }
     case 'DELETE_NOTE':
-      return state // placeholder -- idx gets involved...maybe
+      return {
+        user: action.response,
+        loading: false
+      }
     default:
       return state;
   }

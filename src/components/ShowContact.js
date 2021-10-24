@@ -21,7 +21,7 @@ class ShowContact extends Component {
         <b>Email:</b> {contact.email}<br/><br/>
         <b>Address:</b> {contact.address}</p>
         <p>Edit Contact -- <button onClick={delCon}>Delete Contact</button></p> {/* THESE NEED TO BE MADE INTO DYNAMIC LINKS */}
-        <NotesContainer contact={contact}/>
+        <NotesContainer contact={contact} history={this.props.history} />
       </>
     )
   }

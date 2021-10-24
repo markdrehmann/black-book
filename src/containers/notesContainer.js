@@ -10,7 +10,7 @@ class NotesContainer extends React.Component {
     if (notes) {
       return (
         <ul>
-          {notes.map(note => <Note key={note.id} note={note} />)}
+          {notes.map(note => <Note key={note.id} note={note} history={this.props.history} />)}
         </ul>
       )
     } else {

@@ -122,6 +122,25 @@ export const deleteContact = (id, history) => {
   }
 }
 
+export const deleteNote = (note, history) => {
+  return (dispatch) => {
+    dispatch({type: 'LOADING'})
+    fetch(`http://localhost:3001/notes/${note.id}`, {
+      method: "DELETE"
+    })
+      .then(res => res.json())
+      .then(response => {
+        if (response.errors) {
+        alert(response.errors)
+      } else {
+        history.push(`/contacts/${note.contact_id}`)
+        dispatch({type: 'DELETE_NOTE', response})
+      }
+    })
+    .catch(console.log)
+  }
+}
+
 export const logout = () => {
   return (dispatch) => {dispatch({type: 'LOGOUT'})}
 }
