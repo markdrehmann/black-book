@@ -23,8 +23,9 @@ class NotesContainer extends React.Component {
   render() {
     // console.log(this.props)
     return(
+      // Make the NewNote form appear here instead of new page
       <>
-        <h4>Notes</h4>
+        <h4>Notes</h4> 
         <NavLink 
           style={{ marginRight: '10px' }}
           className='button'

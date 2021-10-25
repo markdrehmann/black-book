@@ -1,3 +1,5 @@
+// I could make a case called 'SUCCESSFUL_REQUEST' and have it replace a bunch of these...
+
 function rootReducer(state = {
   user: {
     username: '',
@@ -58,5 +60,3 @@ function rootReducer(state = {
 }
 
 export default rootReducer;
-
-// I could make a case called 'SUCCESSFUL_REQUEST' and have it replace a bunch of these...
