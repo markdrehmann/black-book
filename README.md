@@ -1,11 +1,6 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-
 # The Black Book!
 
-Welcome to the Black Book! This app was built with the intention to create and manage personal contacts. Built with React and Redux on the frontend, and with a Rails API backend, the main purpose was to fulfill project requirements for the React/Redux final project at Flatiron School. Further functionality and development will continue in later projects.
+Welcome to the Black Book! This app was built with the intention to create and manage personal contacts. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) on the frontend, and with a Rails API backend. The main purpose was to fulfill project requirements for the React/Redux final project at Flatiron School. Further functionality and development will continue in later projects.
 
 ### Installation
 
