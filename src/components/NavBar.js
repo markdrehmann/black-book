@@ -1,11 +1,9 @@
-// import React from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { logout } from "../actions/userActions";
 
 
 const NavBar = props => {
-  // console.log("NavBar", props)
   if (props.loggedIn) {
     return (
       <div className='NavBar'>

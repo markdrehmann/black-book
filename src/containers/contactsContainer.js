@@ -47,6 +47,4 @@ const mapStateToProps = state => {
   }
 }
 
-// probably a mapDispatchToProps for createContact and editContact and deleteContact
-
 export default connect(mapStateToProps)(ContactsContainer)

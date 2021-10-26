@@ -2,7 +2,7 @@ import React from 'react';
 
 const Home = () => {
   return(
-    <p>For all of your contact needs.</p>
+    <p>Manage your contacts. All the cool kids are doing it.</p>
   )
 }
 
