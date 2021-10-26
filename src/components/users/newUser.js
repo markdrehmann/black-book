@@ -37,6 +37,7 @@ class NewUser extends Component {
   }
 }
 
+// This is not currently being used, but potentially, if loggedIn? redirect somewhere else
 const mapStateToProps = state => {
   return {
     loggedIn: !state.user

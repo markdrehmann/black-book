@@ -5,10 +5,9 @@ import ContactsContainer from "../../containers/ContactsContainer";
 class User extends React.Component {
 
   render() {
-    // console.log(this.props)
     return(
       <>
-        <h1>What up, {this.props.user.username}?!</h1>
+        <h1>What up, {this.props.user.username}?</h1>
         <ContactsContainer />
       </>
     )

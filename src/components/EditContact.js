@@ -15,14 +15,14 @@ class EditContact extends Component {
   }
 
   componentDidMount() {
-    const contact = this.props.user.contacts.find(c => c.id === Number(this.props.match.params.id))
+    const contact = this.props.user.contacts.find(c => c.id === Number(this.state.id))
     this.setState({
       first_name: contact.first_name,
       last_name: contact.last_name,
       phone: contact.phone,
       email: contact.email,
       address: contact.address,
-      id: this.props.match.params.id
+      id: contact.id
     })
   }
 
@@ -32,6 +32,7 @@ class EditContact extends Component {
     })
   }
 
+  // Should I put user_id into state to begin with, then i can just pass this.state into editContact()?
   handleSubmit = event => {
     event.preventDefault();
     let contact = {

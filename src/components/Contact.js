@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 
 const Contact = props => {
-  // {console.log(props)}
   return (
     <tr>
       <td>

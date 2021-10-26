@@ -1,4 +1,5 @@
 // I could make a case called 'SUCCESSFUL_REQUEST' and have it replace a bunch of these...
+// Although, it's probably better / more scalable to return ONLY what I need from each server request and insert it into state, rather than return the full user each time.
 
 function rootReducer(state = {
   user: {
@@ -19,14 +20,18 @@ function rootReducer(state = {
         ...state,
         loading: false
       }
+    case 'LOGOUT':
+      return {
+        user: {
+          username: '',
+          password: '',
+          contacts: []
+        },
+        loading: false
+      }
     case 'LOGIN':
       return {
         user: action.response,
-        loading: false
-      }
-    case 'LOGOUT':
-      return {
-        user: {},
         loading: false
       }
     case 'ADD_CONTACT':

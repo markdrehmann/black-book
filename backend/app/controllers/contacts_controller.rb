@@ -24,7 +24,6 @@ class ContactsController < ApplicationController
   end
 
   def update
-    # byebug
     contact = Contact.find_by(id: params[:id])
     user = contact.user
     contact.first_name = params[:first_name]

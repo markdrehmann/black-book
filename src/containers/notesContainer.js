@@ -21,7 +21,6 @@ class NotesContainer extends React.Component {
   }
 
   render() {
-    // console.log(this.props)
     return(
       // Make the NewNote form appear here instead of new page
       <>
