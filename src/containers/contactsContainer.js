@@ -4,6 +4,19 @@ import { NavLink } from 'react-router-dom';
 import Contact from '../components/Contact';
 
 class ContactsContainer extends React.Component {
+  alphabetizeContactsFirstName = (arr) => {
+    arr.sort((a, b) => (a.first_name > b.first_name) ? 1 : -1)
+  }
+
+  alphabetizeContactsLastName = (arr) => {
+    arr.sort((a, b) => (a.last_name > b.last_name) ? 1 : -1)
+  }
+  
+  componentDidMount() {
+    this.alphabetizeContactsLastName(this.props.contacts)
+  }
+  // This shouldn't be here, but it alphabetizes correctly
+
   renderContacts = () => {
     let contacts = this.props.contacts
     return(
